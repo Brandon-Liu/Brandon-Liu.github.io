@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useState, type PointerEvent as ReactPointerEvent } from 'react';
@@ -66,6 +67,9 @@ export function SiteHeader() {
   return (
     <header className="topbar">
       <Link className="brand" href="/" aria-label="Brandon Liu home">
+        <span className="brand-avatar" aria-hidden="true">
+          <Image src="/brandon-liu.jpg" alt="" width={80} height={80} priority />
+        </span>
         <span className="brand-name"><span className="brand-first">Brandon</span><span className="brand-last">Liu</span></span>
         <span className="brand-rule" />
         <span className="brand-role">Mechanical engineer</span>
