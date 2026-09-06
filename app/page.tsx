@@ -10,6 +10,7 @@ const sections = [
   { id: 'work', label: 'Work' },
   { id: 'hobbies', label: 'Hobbies' },
   { id: 'about', label: 'About' },
+  { id: 'contact', label: 'Contact' },
 ];
 
 export default function Home() {
@@ -71,7 +72,7 @@ export default function Home() {
         </button>
 
         <nav className="topnav" aria-label="Portfolio sections">
-          {['About', 'Work', 'Robotics', 'Hobbies'].map((item) => {
+          {['About', 'Work', 'Robotics', 'Hobbies', 'Contact'].map((item) => {
             const index = sections.findIndex((section) => section.id === item.toLowerCase());
             return (
               <button
@@ -193,10 +194,32 @@ export default function Home() {
             <p>My work sits at the intersection of robotics, controls, and thoughtful machine design.</p>
             <div className="about-links">
               <a href="https://www.linkedin.com/in/brandonliu05/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-              <a href="mailto:">Email ↗</a>
+              <button onClick={() => goTo('contact')}>Contact →</button>
             </div>
           </div>
           <button className="back-start" onClick={() => goTo('intro')}>Back to start <ArrowRight aria-hidden="true" /></button>
+        </section>
+
+        <section className="panel contact-panel" id="contact" data-panel="6">
+          <div className="panel-heading light-heading">
+            <p><span>06</span> Contact</p>
+            <p>Start a conversation</p>
+          </div>
+          <div className="contact-watermark" aria-hidden="true">Hello</div>
+          <div className="contact-copy">
+            <p className="eyebrow">Open to good problems</p>
+            <h2>Let&apos;s make<br />something move.</h2>
+            <p>For robotics, mechanical design, collaboration, or a good build story—reach out.</p>
+          </div>
+          <div className="contact-actions">
+            <a href="https://www.linkedin.com/in/brandonliu05/" target="_blank" rel="noreferrer">
+              <span>01</span><b>LinkedIn</b><i>↗</i>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1" target="_blank" rel="noreferrer">
+              <span>02</span><b>Email</b><i>↗</i>
+            </a>
+          </div>
+          <button className="back-start contact-back" onClick={() => goTo('intro')}>Back to start <ArrowRight aria-hidden="true" /></button>
         </section>
       </div>
 
