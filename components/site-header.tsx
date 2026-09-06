@@ -34,9 +34,9 @@ export function SiteHeader() {
             {link.label}
           </Link>
         ))}
-        <Link className={pathname === '/resume' ? 'resume-link is-active' : 'resume-link'} href="/resume" aria-label="Resume" title="Resume" onClick={() => setOpen(false)}>
+        <a className="resume-link" href="/brandon-liu-resume.pdf" target="_blank" rel="noreferrer" aria-label="Open Brandon Liu's resume PDF" title="Resume PDF" onClick={() => setOpen(false)}>
           <span aria-hidden="true">📄</span><span className="sr-only">Resume</span>
-        </Link>
+        </a>
       </nav>
     </header>
   );
