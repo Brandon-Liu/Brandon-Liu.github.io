@@ -42,8 +42,6 @@ a { color: inherit; }
 .brand-name { display: flex; gap: .15em; font-size: clamp(24px, 1.8vw, 30px); font-style: italic; line-height: 1; letter-spacing: -.035em; text-transform: uppercase; }
 .brand-first { font-weight: 400; }
 .brand-last { font-weight: 800; }
-.brand-rule { width: 1px; height: 29px; background: var(--ink); opacity: .28; }
-.brand-role { max-width: none; white-space: nowrap; color: var(--ink); font-size: 12px; font-weight: 650; line-height: 1; letter-spacing: .22em; text-align: left; text-transform: uppercase; }
 .topnav { display: flex; align-items: center; gap: clamp(24px, 2.7vw, 48px); }
 .topnav a { position: relative; padding: 9px 0; color: var(--ink); font-size: clamp(14px, 1vw, 16px); font-weight: 600; letter-spacing: -.01em; text-decoration: none; }
 .nav-outline { position: absolute; inset: -3px -11px; width: calc(100% + 22px); height: calc(100% + 6px); overflow: visible; pointer-events: none; }
@@ -154,7 +152,6 @@ a { color: inherit; }
   .brand { gap: 11px; }
   .brand-avatar { width: 34px; height: 34px; flex-basis: 34px; }
   .brand-name { font-size: 21px; }
-  .brand-rule, .brand-role { display: none; }
   .topnav { gap: 9px; }
   .topnav a { font-size: 12px; }
   .topnav .resume-link { width: 28px; height: 28px; font-size: 12px; }

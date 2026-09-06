@@ -70,8 +70,6 @@ export function SiteHeader() {
           <Image src="/brandon-liu.jpg" alt="" width={80} height={80} priority />
         </span>
         <span className="brand-name"><span className="brand-first">Brandon</span><span className="brand-last">Liu</span></span>
-        <span className="brand-rule" />
-        <span className="brand-role">Mechanical engineer</span>
       </a>
 
       <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">
