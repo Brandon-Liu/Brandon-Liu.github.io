@@ -4,3 +4,5 @@
 @media(max-width:600px){.frame{width:calc(100vw - 38px);grid-template-columns:105px 1fr;gap:18px}.title{font-size:22px}nav button{font-size:14px}.panel{min-height:250px}.home-art img{height:min(55vh,390px)}.home-art b{font-size:20px}.copy{padding-top:12px}.copy h1{font-size:20px}.copy p{font-size:14px}.row{display:block}.row span{display:block;text-align:left;margin-top:3px}}
 .socials{position:fixed;top:25px;right:30px;display:flex;align-items:center;gap:13px}.socials a{width:16px;height:16px;color:#171717;text-decoration:none;display:grid;place-items:center}.socials svg{width:15px;height:15px;stroke-width:1.6}.socials span{font:15px/1 Arial,sans-serif}.socials a:hover{color:#2359af}
 @media(max-width:600px){.socials{top:18px;right:20px;gap:11px}.socials a{width:14px;height:14px}.socials svg{width:14px;height:14px}}
+.title{white-space:nowrap}
+@media(max-width:600px){.frame{grid-template-columns:125px 1fr}}
