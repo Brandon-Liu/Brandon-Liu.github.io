@@ -44,8 +44,8 @@ a { color: inherit; }
 .brand-role { max-width: none; white-space: nowrap; color: var(--ink); font-size: 12px; font-weight: 650; line-height: 1; letter-spacing: .22em; text-align: left; text-transform: uppercase; }
 .topnav { display: flex; align-items: center; gap: clamp(24px, 2.7vw, 48px); }
 .topnav a { position: relative; padding: 9px 0; color: var(--ink); font-size: clamp(14px, 1vw, 16px); font-weight: 600; letter-spacing: -.01em; text-decoration: none; }
-.topnav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background: var(--signal); transform: scaleX(0); transform-origin: left; transition: transform .22s ease; }
-.topnav a:hover::after, .topnav a.is-active::after { transform: scaleX(1); }
+.topnav a::after { content: ''; position: absolute; inset: -3px -11px; border: 1px solid var(--signal); border-radius: 50%; opacity: 0; pointer-events: none; transform: scale(.72) rotate(-4deg); transition: opacity .18s ease, transform .28s cubic-bezier(.16,.84,.24,1); }
+.topnav a:hover::after, .topnav a.is-active::after { opacity: 1; transform: scale(1) rotate(-4deg); }
 .topnav .resume-link { display: grid; width: 32px; height: 32px; place-items: center; padding: 0; border: 1px solid var(--rule); border-radius: 50%; font-size: 14px; }
 .topnav .resume-link::after { display: none; }
 .topnav .resume-link:hover, .topnav .resume-link.is-active { border-color: var(--signal); background: var(--signal); }
