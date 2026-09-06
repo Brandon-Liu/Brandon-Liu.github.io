@@ -46,12 +46,12 @@ a { color: inherit; }
 .menu-toggle { display: none; width: 32px; height: 32px; padding: 0; place-items: center; border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink); }
 .menu-toggle svg { width: 15px; }
 
-.home-scroll { height: 300svh; background: var(--paper); }
+.home-scroll { height: 700svh; background: var(--paper); }
 .robot-stage { position: sticky; top: 0; height: 100svh; overflow: hidden; }
 .robot-stage::before { content: ''; position: absolute; inset: 14vh 21vw 9vh; border: 1px solid var(--rule); border-radius: 50%; transform: rotate(-7deg); }
 .robot-frame { position: absolute; inset: 68px 8vw 48px; display: grid; place-items: center; }
-.robot-image { position: absolute; width: min(74vw, 930px); height: min(78vh, 820px); object-fit: contain; opacity: 0; transform: scale(.92) translateY(20px); mix-blend-mode: multiply; filter: contrast(1.07); transition: opacity .55s ease, transform .7s cubic-bezier(.16,.84,.24,1); }
-.robot-image.is-active { opacity: 1; transform: scale(1) translateY(0); }
+.robot-placeholder { position: absolute; color: var(--ink); font-size: clamp(76px, 15vw, 230px); font-weight: 700; line-height: .8; letter-spacing: -.065em; opacity: 0; transform: scale(.92) translateY(20px); transition: opacity .55s ease, transform .7s cubic-bezier(.16,.84,.24,1); }
+.robot-placeholder.is-active { opacity: 1; transform: scale(1) translateY(0); }
 .robot-dots { position: absolute; left: 50%; bottom: 24px; display: flex; gap: 10px; transform: translateX(-50%); }
 .robot-dots button { width: 7px; height: 7px; padding: 0; border: 1px solid var(--ink); border-radius: 50%; background: transparent; cursor: pointer; transition: background .2s, transform .2s; }
 .robot-dots button.is-active { background: var(--signal); border-color: var(--signal); transform: scale(1.45); }
@@ -75,11 +75,11 @@ a { color: inherit; }
 .clean-list p { margin: 0; color: rgba(255,255,255,.62); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
 
 .page-robotics { padding-bottom: 6vw; }
-.robot-grid { margin-top: 40px; display: grid; grid-template-columns: 1.25fr .75fr; grid-template-rows: repeat(2, min(40vw, 550px)); gap: 12px; }
+.robot-grid { margin-top: 40px; display: grid; grid-template-columns: 1.25fr .75fr; grid-auto-rows: min(32vw, 440px); gap: 12px; }
 .robot-grid figure { position: relative; margin: 0; overflow: hidden; background: rgba(0,66,37,.06); }
 .robot-grid figure:first-child { grid-row: 1 / 3; }
-.robot-grid img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform .45s cubic-bezier(.16,.84,.24,1); }
-.robot-grid figure:hover img { transform: scale(1.035); }
+.robot-card-placeholder { width: 100%; height: 100%; display: grid; place-items: center; color: var(--ink); font-size: clamp(42px, 7vw, 112px); font-weight: 700; letter-spacing: -.055em; transition: transform .45s cubic-bezier(.16,.84,.24,1); }
+.robot-grid figure:hover .robot-card-placeholder { transform: scale(1.035); }
 .robot-grid figcaption { position: absolute; left: 16px; bottom: 14px; color: var(--signal); font-size: 10px; font-weight: 500; letter-spacing: .15em; }
 
 .page-contact { background: var(--ink); color: var(--paper); display: grid; grid-template-columns: 1.25fr .75fr; grid-template-rows: auto 1fr; gap: 7vw; }
@@ -100,7 +100,7 @@ a { color: inherit; }
   .topnav .resume-link { width: 28px; height: 28px; font-size: 12px; }
   .robot-frame { inset: 72px 7vw 62px; }
   .robot-stage::before { inset: 25vh 4vw 22vh; }
-  .robot-image { width: 96vw; height: 72vh; }
+  .robot-placeholder { font-size: 24vw; }
   .robot-dots { left: 50%; bottom: 20px; }
   .page { padding: 82px 18px 30px; }
   .about-layout { min-height: calc(100svh - 130px); display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 45px; }
@@ -109,7 +109,7 @@ a { color: inherit; }
   .page-work > h1 { margin: 18vh 0 10vh; font-size: 24vw; }
   .clean-list { margin-left: 0; }
   .clean-list article { grid-template-columns: 28px 1fr auto; }
-  .robot-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, 72vw); }
+  .robot-grid { grid-template-columns: 1fr; grid-auto-rows: 72vw; }
   .robot-grid figure:first-child { grid-row: auto; }
   .page-contact { display: flex; flex-direction: column; justify-content: center; gap: 10vh; }
   .page-contact > h1 { font-size: 15vw; }

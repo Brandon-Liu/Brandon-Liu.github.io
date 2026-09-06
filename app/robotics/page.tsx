@@ -1,7 +1,11 @@
 const robots = [
-  { src: '/mechanism-study.png', alt: 'Six-wheel field rover' },
-  { src: '/robot-field.png', alt: 'Agricultural field robot' },
-  { src: '/robot-arm.png', alt: 'Autonomous mobile manipulator' },
+  'CAD 1',
+  'CAD 2',
+  'CAD 3',
+  'CAD 4',
+  'CAD 5',
+  'CAD 6',
+  'CAD 7',
 ];
 
 export default function RoboticsPage() {
@@ -10,8 +14,8 @@ export default function RoboticsPage() {
       <div className="page-mark">03 / Robotics</div>
       <div className="robot-grid">
         {robots.map((robot, index) => (
-          <figure key={robot.src}>
-            <img src={robot.src} alt={robot.alt} />
+          <figure key={robot}>
+            <div className="robot-card-placeholder">{robot}</div>
             <figcaption>{String(index + 1).padStart(2, '0')}</figcaption>
           </figure>
         ))}

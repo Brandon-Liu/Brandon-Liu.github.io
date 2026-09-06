@@ -3,9 +3,13 @@
 import { useEffect, useState } from 'react';
 
 const robots = [
-  { src: '/mechanism-study.png', alt: 'Six-wheel field rover', number: '01' },
-  { src: '/robot-field.png', alt: 'Agricultural field robot', number: '02' },
-  { src: '/robot-arm.png', alt: 'Autonomous mobile manipulator', number: '03' },
+  { label: 'CAD 1', number: '01' },
+  { label: 'CAD 2', number: '02' },
+  { label: 'CAD 3', number: '03' },
+  { label: 'CAD 4', number: '04' },
+  { label: 'CAD 5', number: '05' },
+  { label: 'CAD 6', number: '06' },
+  { label: 'CAD 7', number: '07' },
 ];
 
 export default function Home() {
@@ -32,13 +36,13 @@ export default function Home() {
       <section className="robot-stage" aria-label="Robot showcase">
         <div className="robot-frame">
           {robots.map((robot, index) => (
-            <img
-              key={robot.src}
-              className={active === index ? 'robot-image is-active' : 'robot-image'}
-              src={robot.src}
-              alt={robot.alt}
+            <div
+              key={robot.number}
+              className={active === index ? 'robot-placeholder is-active' : 'robot-placeholder'}
               aria-hidden={active !== index}
-            />
+            >
+              {robot.label}
+            </div>
           ))}
         </div>
 
@@ -48,7 +52,7 @@ export default function Home() {
               key={robot.number}
               className={active === index ? 'is-active' : ''}
               onClick={() => showRobot(index)}
-              aria-label={`Show robot ${index + 1}`}
+              aria-label={`Show ${robot.label}`}
             />
           ))}
         </div>
