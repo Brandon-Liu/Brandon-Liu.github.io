@@ -7,12 +7,14 @@
   --signal: #004225;
   --acid: #ffffff;
   --rule: rgba(0, 66, 37, .2);
-  --crosshair-cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 2V12M16 20V30M2 16H12M20 16H30' fill='none' stroke='%23fff' stroke-width='5'/%3E%3Cpath d='M16 2V12M16 20V30M2 16H12M20 16H30' fill='none' stroke='%23004225' stroke-width='3'/%3E%3C/svg%3E") 16 16, crosshair;
+  --crosshair-cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 2V12M16 20V30M2 16H12M20 16H30' fill='none' stroke='%23004225' stroke-width='3'/%3E%3C/svg%3E") 16 16, crosshair;
+  --crosshair-cursor-hover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 2V12M16 20V30M2 16H12M20 16H30' fill='none' stroke='%230a5a36' stroke-width='3'/%3E%3C/svg%3E") 16 16, crosshair;
   --gutter: clamp(24px, 4.2vw, 68px);
 }
 
 * { box-sizing: border-box; }
 html, body, body * { cursor: var(--crosshair-cursor) !important; }
+a:hover, button:hover, [role='button']:hover { cursor: var(--crosshair-cursor-hover) !important; }
 html, body { margin: 0; min-height: 100%; background: var(--paper); color: var(--ink); }
 html { scroll-behavior: smooth; }
 body { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
