@@ -19,7 +19,7 @@ export function SiteHeader() {
   return (
     <header className="topbar">
       <Link className="brand" href="/" aria-label="Brandon Liu home">
-        <span className="brand-name">Brandon Liu</span>
+        <span className="brand-name"><span className="brand-first">Brandon</span><span className="brand-last">Liu</span></span>
         <span className="brand-rule" />
         <span className="brand-role">Mechanical engineer</span>
       </Link>
