@@ -52,14 +52,9 @@ a { color: inherit; }
 .robot-frame { position: absolute; inset: 68px 8vw 48px; display: grid; place-items: center; }
 .robot-image { position: absolute; width: min(74vw, 930px); height: min(78vh, 820px); object-fit: contain; opacity: 0; transform: scale(.92) translateY(20px); mix-blend-mode: multiply; filter: contrast(1.07); transition: opacity .55s ease, transform .7s cubic-bezier(.16,.84,.24,1); }
 .robot-image.is-active { opacity: 1; transform: scale(1) translateY(0); }
-.robot-index { position: absolute; right: var(--gutter); bottom: 25px; display: flex; align-items: baseline; gap: 8px; font-size: 11px; font-weight: 400; letter-spacing: .12em; }
-.robot-index b { color: var(--signal); font-size: 22px; font-weight: 500; }
-.robot-index span { color: var(--muted); }
 .robot-dots { position: absolute; left: var(--gutter); top: 50%; display: flex; flex-direction: column; gap: 10px; transform: translateY(-50%); }
 .robot-dots button { width: 7px; height: 7px; padding: 0; border: 1px solid var(--ink); border-radius: 50%; background: transparent; cursor: pointer; transition: background .2s, transform .2s; }
 .robot-dots button.is-active { background: var(--signal); border-color: var(--signal); transform: scale(1.45); }
-.scroll-hint { position: absolute; left: 50%; bottom: 23px; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 9px; font-weight: 400; letter-spacing: .17em; text-transform: uppercase; transform: translateX(-50%); }
-.scroll-hint span { color: var(--signal); font-size: 16px; }
 
 .page { min-height: 100svh; padding: 92px var(--gutter) 38px; }
 .page-mark { font-size: 10px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
@@ -107,8 +102,6 @@ a { color: inherit; }
   .robot-stage::before { inset: 25vh 4vw 22vh; }
   .robot-image { width: 96vw; height: 72vh; }
   .robot-dots { left: 18px; }
-  .robot-index { right: 18px; bottom: 22px; }
-  .scroll-hint { bottom: 21px; }
   .page { padding: 82px 18px 30px; }
   .about-layout { min-height: calc(100svh - 130px); display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 45px; }
   .about-layout h1 { font-size: 19vw; line-height: .72; }

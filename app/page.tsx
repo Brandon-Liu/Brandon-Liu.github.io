@@ -42,10 +42,6 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="robot-index" aria-live="polite">
-          <b>{robots[active].number}</b><span>/</span><span>{String(robots.length).padStart(2, '0')}</span>
-        </div>
-
         <div className="robot-dots" aria-label="Choose a robot">
           {robots.map((robot, index) => (
             <button
@@ -56,8 +52,6 @@ export default function Home() {
             />
           ))}
         </div>
-
-        <div className="scroll-hint" aria-hidden="true">Scroll <span>↓</span></div>
       </section>
     </main>
   );
