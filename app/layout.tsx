@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
+import { SiteHeader } from '@/components/site-header';
 import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://brandon-liu-mechanical-engineer.yoosang-cho.chatgpt.site'),
   title: 'Brandon Liu',
-  description: 'A horizontal archive of robots, mechanisms, software, and side quests by mechanical engineer Brandon Liu.',
-  openGraph: { title: 'Brandon Liu', description: 'A horizontal archive of robotics and thoughtful machine design.', images: ['/og.png'] },
-  twitter: { card: 'summary_large_image', title: 'Brandon Liu', description: 'A horizontal archive of robotics and thoughtful machine design.', images: ['/og.png'] },
+  description: 'Robots, mechanisms, and thoughtful machine design by mechanical engineer Brandon Liu.',
+  openGraph: { title: 'Brandon Liu', description: 'Robots, mechanisms, and thoughtful machine design.', images: ['/og.png'] },
+  twitter: { card: 'summary_large_image', title: 'Brandon Liu', description: 'Robots, mechanisms, and thoughtful machine design.', images: ['/og.png'] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body><SiteHeader />{children}</body></html>;
 }
