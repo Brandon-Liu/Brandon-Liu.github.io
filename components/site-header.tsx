@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
@@ -66,14 +65,14 @@ export function SiteHeader() {
 
   return (
     <header className="topbar">
-      <Link className="brand" href="/" aria-label="Brandon Liu home">
+      <a className="brand" href="/" aria-label="Brandon Liu home">
         <span className="brand-avatar" aria-hidden="true">
           <Image src="/brandon-liu.jpg" alt="" width={80} height={80} priority />
         </span>
         <span className="brand-name"><span className="brand-first">Brandon</span><span className="brand-last">Liu</span></span>
         <span className="brand-rule" />
         <span className="brand-role">Mechanical engineer</span>
-      </Link>
+      </a>
 
       <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">
         {open ? <X /> : <Menu />}
@@ -81,7 +80,7 @@ export function SiteHeader() {
 
       <nav className={open ? 'topnav is-open' : 'topnav'} aria-label="Main navigation">
         {links.map((link) => (
-          <Link
+          <a
             key={link.href}
             href={link.href}
             className={pathname === link.href ? 'is-active' : ''}
@@ -94,7 +93,7 @@ export function SiteHeader() {
               <rect className="nav-outline-forward" x=".5" y=".5" width="99" height="39" pathLength="100" />
               <rect className="nav-outline-backward" x=".5" y=".5" width="99" height="39" pathLength="100" />
             </svg>
-          </Link>
+          </a>
         ))}
         <a className="resume-link" href="/brandon-liu-resume.pdf" target="_blank" rel="noreferrer" aria-label="Open Brandon Liu's resume PDF" title="Resume PDF" onClick={() => setOpen(false)}>
           <span aria-hidden="true">📄</span><span className="sr-only">Resume</span>
