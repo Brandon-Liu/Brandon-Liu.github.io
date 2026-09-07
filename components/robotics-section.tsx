@@ -10,17 +10,23 @@ const projects = [
 
 export function RoboticsSection() {
   return (
-    <section id="robotics" className="content-page robotics-page scroll-section" aria-labelledby="robotics-title">
+    <section
+      id="robotics"
+      className="content-page robotics-page scroll-section"
+      aria-labelledby="robotics-title"
+    >
       <div className="robotics-content">
         <h2 id="robotics-title">Robotics</h2>
-        <p className="robotics-summary">11 robots built · 2 world titles · 20+ regional awards</p>
+        <p className="robotics-summary">
+          11 robots built · 2 world titles · 20+ regional awards
+        </p>
         <div className="robot-project-list">
-        {projects.map(([cad, title, result]) => (
-          <article className="robot-project" key={cad}>
-            <h3>{title}</h3>
-            <p>{result}</p>
-          </article>
-        ))}
+          {projects.map(([cad, title, result]) => (
+            <article className="robot-project" key={cad}>
+              <h3>{title}</h3>
+              <p>{result}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

@@ -38,20 +38,33 @@ const experience = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="content-page experience-page scroll-section" aria-labelledby="experience-title">
+    <section
+      id="experience"
+      className="content-page experience-page scroll-section"
+      aria-labelledby="experience-title"
+    >
       <div className="experience-content">
         <h2 id="experience-title">Experience</h2>
         <div className="experience-list">
-        {experience.map((item) => (
-          <article className="experience-row" key={item.company}>
-            <h3><a className="organization-link" href={item.url} target="_blank" rel="noreferrer">{item.company}</a></h3>
-            <div className="experience-meta">
-              <p className="experience-role">{item.role}</p>
-              <p className="experience-date">{item.date}</p>
-            </div>
-            <p className="experience-note">{item.note}</p>
-          </article>
-        ))}
+          {experience.map((item) => (
+            <article className="experience-row" key={item.company}>
+              <h3>
+                <a
+                  className="organization-link"
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {item.company}
+                </a>
+              </h3>
+              <div className="experience-meta">
+                <p className="experience-role">{item.role}</p>
+                <p className="experience-date">{item.date}</p>
+              </div>
+              <p className="experience-note">{item.note}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

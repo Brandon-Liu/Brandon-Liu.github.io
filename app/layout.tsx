@@ -3,16 +3,39 @@ import { SiteHeader } from '@/components/site-header';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://brandon-liu-mechanical-engineer.yoosang-cho.chatgpt.site'),
+  metadataBase: new URL(
+    'https://brandon-liu-mechanical-engineer.yoosang-cho.chatgpt.site',
+  ),
   title: 'Brandon Liu',
-  icons: { icon: [{ url: '/favicon-face.png', type: 'image/png', sizes: '64x64' }] },
-  description: 'Robots, mechanisms, and thoughtful machine design by mechanical engineer Brandon Liu.',
-  openGraph: { title: 'Brandon Liu', description: 'Robots, mechanisms, and thoughtful machine design.', images: ['/og.png'] },
-  twitter: { card: 'summary_large_image', title: 'Brandon Liu', description: 'Robots, mechanisms, and thoughtful machine design.', images: ['/og.png'] },
+  icons: {
+    icon: [{ url: '/favicon-face.png', type: 'image/png', sizes: '64x64' }],
+  },
+  description:
+    'Robots, mechanisms, and thoughtful machine design by mechanical engineer Brandon Liu.',
+  openGraph: {
+    title: 'Brandon Liu',
+    description: 'Robots, mechanisms, and thoughtful machine design.',
+    images: ['/og.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Brandon Liu',
+    description: 'Robots, mechanisms, and thoughtful machine design.',
+    images: ['/og.png'],
+  },
 };
 
 export const viewport: Viewport = { themeColor: '#004225' };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><SiteHeader />{children}</body></html>;
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en">
+      <body>
+        <SiteHeader />
+        {children}
+      </body>
+    </html>
+  );
 }
