@@ -62,6 +62,8 @@ a { color: inherit; }
 .featured-cad-stage { position: absolute; inset: 235px 13vw 120px; display: grid; place-items: center; }
 .featured-cad { grid-area: 1 / 1; color: var(--ink); font-size: clamp(86px, 17vw, 260px); font-weight: 700; line-height: .8; letter-spacing: -.065em; opacity: 0; transform: translateY(16px) scale(.96); transition: opacity .35s ease, transform .55s cubic-bezier(.16,.84,.24,1); }
 .featured-cad.is-active { opacity: 1; transform: translateY(0) scale(1); }
+.featured-cad-image { width: 100%; height: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; }
+.featured-cad-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .feature-dots { position: absolute; left: 50%; bottom: 22px; display: flex; gap: 11px; transform: translateX(-50%); }
 .feature-dots button { width: 8px; height: 8px; padding: 0; border: 1px solid var(--ink); border-radius: 50%; background: transparent; transition: background .2s ease, transform .2s ease; }
 .feature-dots button.is-active { background: var(--ink); transform: scale(1.4); }

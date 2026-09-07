@@ -54,8 +54,10 @@ export default function Home() {
           </div>
           <div className="featured-cad-stage" aria-live="polite">
             {featuredProjects.map((project, index) => (
-              <div className={active === index ? 'featured-cad is-active' : 'featured-cad'} aria-hidden={active !== index} key={project}>
-                {project}
+              <div className={`featured-cad${index === 0 ? ' featured-cad-image' : ''}${active === index ? ' is-active' : ''}`} aria-hidden={active !== index} key={project}>
+                {index === 0 ? (
+                  <img src="/cad-1.png" alt="CAD 1: Brandon’s competition robot with a vertical lift and cone-stacking mechanism" width={1672} height={941} fetchPriority="high" />
+                ) : project}
               </div>
             ))}
           </div>
