@@ -168,6 +168,19 @@ a {
   padding: 0;
   font-size: 18px;
 }
+.resume-link > span[aria-hidden='true'] {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+.resume-link:hover > span[aria-hidden='true'],
+.resume-link:focus-visible > span[aria-hidden='true'] {
+  transform: translateY(-3px) rotate(-10deg) scale(1.12);
+}
+.resume-link:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 4px;
+}
+
 .menu-toggle {
   display: none;
   width: 32px;
@@ -724,6 +737,11 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .resume-link:hover > span[aria-hidden='true'],
+  .resume-link:focus-visible > span[aria-hidden='true'] {
+    transform: none;
+    opacity: 0.7;
+  }
   html {
     scroll-behavior: auto;
   }
