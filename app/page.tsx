@@ -50,7 +50,7 @@ export default function Home() {
         <div className="cad-feature">
           <div className="landing-intro">
             <h2>Hello!</h2>
-            <p>I’m Brandon, a Mechanical Engineering Student at Purdue, and I’m currently working @ agrobotics building bombs and dildos.</p>
+            <p>I’m<br />Brandon, a Mechanical Engineering Student at Purdue, and I’m currently working @ agrobotics building bombs and dildos.</p>
           </div>
           <div className="featured-cad-stage" aria-live="polite">
             {featuredProjects.map((project, index) => (
