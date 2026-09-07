@@ -70,10 +70,10 @@ a { color: inherit; }
 .portfolio-scroll-cue:hover { background: var(--ink); color: var(--paper); }
 .portfolio-scroll-cue svg { width: 17px; height: 17px; stroke-width: 1.5; animation: scroll-cue 1.35s ease-in-out infinite; }
 @keyframes scroll-cue { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(4px); } }
-.cad-gallery { min-height: 100svh; padding: calc(76px + 3vw) var(--gutter) var(--gutter); }
-.cad-grid { min-height: calc(100svh - 76px - 3vw - var(--gutter)); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(240px, 1fr)); gap: 12px; }
-.cad-card { display: grid; place-items: center; border: 1px solid var(--rule); background: rgba(0,66,37,.035); transition: background .25s ease, color .25s ease, transform .25s ease; }
-.cad-card span { font-size: clamp(38px, 5vw, 78px); font-weight: 650; line-height: 1; letter-spacing: -.055em; }
+.cad-gallery { padding: calc(76px + 3vw) var(--gutter) 40px; }
+.cad-grid { width: 100%; max-width: 840px; margin-inline: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.cad-card { aspect-ratio: 1; display: grid; place-items: center; border: 1px solid var(--rule); background: rgba(0,66,37,.035); transition: background .25s ease, color .25s ease, transform .25s ease; }
+.cad-card span { font-size: clamp(26px, 4vw, 48px); font-weight: 650; line-height: 1; letter-spacing: -.055em; }
 .cad-card:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
 .cad-card:hover, .cad-card:hover * { cursor: var(--crosshair-cursor-hover) !important; }
 
@@ -173,7 +173,7 @@ a { color: inherit; }
   .feature-dots { bottom: 20px; }
   .portfolio-scroll-cue { bottom: 43px; }
   .cad-gallery { padding: 90px 18px 24px; }
-  .cad-grid { min-height: calc(100svh - 114px); grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(210px, 1fr)); }
+  .cad-grid { max-width: 560px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .page { padding: 90px 18px 30px; }
   .about-layout { min-height: calc(100svh - 130px); display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 45px; }
   .about-layout h1 { font-size: 19vw; line-height: .72; }
@@ -203,8 +203,6 @@ a { color: inherit; }
   .topnav { position: absolute; top: 66px; left: 0; right: 0; display: none; padding: 18px; justify-content: flex-end; background: rgba(255,255,255,.98); border-bottom: 1px solid var(--rule); }
   .topnav.is-open { display: flex; }
   .topnav a { font-size: 11px; }
-  .cad-grid { grid-template-columns: 1fr; grid-template-rows: none; }
-  .cad-card { min-height: 58vw; }
 }
 
 @media (prefers-reduced-motion: reduce) {
