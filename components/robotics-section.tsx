@@ -11,20 +11,18 @@ const projects = [
 export function RoboticsSection() {
   return (
     <section id="robotics" className="content-page robotics-page scroll-section" aria-labelledby="robotics-title">
-      <header className="page-intro robotics-intro">
-        <span className="eyebrow">Robotics</span>
-        <h2 id="robotics-title">Eleven robots.<br />Two world titles.</h2>
-        <p>Five world championship awards and more than twenty regional awards.</p>
-      </header>
-
-      <section className="robot-project-grid" aria-label="Selected robotics work">
+      <div className="robotics-content">
+        <h2 id="robotics-title">Robotics</h2>
+        <p className="robotics-summary">11 robots built · 2 world titles · 20+ regional awards</p>
+        <div className="robot-project-list">
         {projects.map(([cad, title, result]) => (
           <article className="robot-project" key={cad}>
-            <span>{cad}</span>
-            <div><h3>{title}</h3><p>{result}</p></div>
+            <h3>{title}</h3>
+            <p>{result}</p>
           </article>
         ))}
-      </section>
+        </div>
+      </div>
     </section>
   );
 }
