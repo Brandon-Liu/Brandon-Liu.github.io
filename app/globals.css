@@ -450,12 +450,14 @@ a {
   font-weight: 600;
 }
 
+.about-me-content,
 .experience-content,
 .robotics-content {
   width: 100%;
   max-width: 960px;
   margin-inline: auto;
 }
+.about-me-content > h2,
 .experience-content > h2,
 .robotics-content > h2 {
   margin: 0;
@@ -464,6 +466,40 @@ a {
   line-height: 1.2;
   letter-spacing: -0.035em;
 }
+.about-me-profile {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+  padding-inline-start: clamp(20px, 3vw, 40px);
+}
+.about-me-portrait {
+  width: 140px;
+  height: 140px;
+  flex: 0 0 140px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.about-me-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.45);
+  transform-origin: 50% 39%;
+}
+.about-me-copy p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.about-me-copy p + p {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
 .experience-list {
   display: grid;
   gap: 36px;
@@ -573,6 +609,7 @@ a {
   border-top: 1px solid var(--rule);
   scroll-margin-top: 76px;
 }
+.scroll-section.about-me-section,
 .scroll-section.experience-page,
 .scroll-section.robotics-page {
   border-top: 0;
@@ -713,6 +750,17 @@ a {
 }
 
 @media (max-width: 560px) {
+  .about-me-profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 28px;
+  }
+  .about-me-portrait {
+    width: 112px;
+    height: 112px;
+    flex-basis: 112px;
+  }
   .menu-toggle {
     display: grid;
     margin-left: auto;

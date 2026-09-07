@@ -1,4 +1,5 @@
 import { FeaturedShowcase } from '@/components/featured-showcase';
+import { AboutSection } from '@/components/about-section';
 import { ExperienceSection } from '@/components/experience-section';
 import { RoboticsSection } from '@/components/robotics-section';
 import { ContactSection } from '@/components/contact-section';
@@ -32,6 +33,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <AboutSection />
       <ExperienceSection />
       <RoboticsSection />
       <ContactSection />

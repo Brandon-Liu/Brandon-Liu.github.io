@@ -60,14 +60,14 @@ export function FeaturedShowcase() {
 
   return (
     <section
-      id="about"
+      id="home"
       className="featured-scroll"
       ref={featureRef}
       aria-label="Featured CAD projects"
     >
       <div className="cad-feature">
         <div className="landing-intro">
-          <h2>Hello 👋</h2>
+          <h2>Hello!</h2>
           <p>
             I’m Brandon, a Mechanical Engineering Student at Purdue, and I’m
             <br />

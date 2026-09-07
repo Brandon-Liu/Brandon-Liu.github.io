@@ -124,7 +124,7 @@ export function SiteHeader() {
     <header className="topbar">
       <a
         className="brand"
-        href={pathname === '/' ? '#about' : '/#about'}
+        href={pathname === '/' ? '#home' : '/#home'}
         aria-label="Brandon Liu home"
       >
         <span className="brand-avatar" aria-hidden="true">
