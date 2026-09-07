@@ -130,7 +130,7 @@ a { color: inherit; }
 .compact-intro { grid-template-columns: minmax(120px, .24fr) 1fr; }
 .experience-content, .robotics-content { width: 100%; max-width: 960px; margin-inline: auto; }
 .experience-content > h2, .robotics-content > h2 { margin: 0; font-size: clamp(30px, 3vw, 40px); font-weight: 600; line-height: 1.2; letter-spacing: -.035em; }
-.experience-list { display: grid; gap: 36px; margin-top: 36px; }
+.experience-list { display: grid; gap: 36px; margin-top: 36px; padding-inline-start: clamp(20px, 3vw, 40px); }
 .experience-row { padding: 0; }
 .experience-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; margin-top: 5px; }
 .item-number { font-size: 10px; font-weight: 700; letter-spacing: .12em; }
@@ -141,7 +141,7 @@ a { color: inherit; }
 .experience-row .experience-note { margin-top: 8px; color: var(--muted); font-size: 15px; font-weight: 400; line-height: 1.6; }
 
 .robotics-summary { margin: 12px 0 0; color: var(--muted); font-size: 15px; font-weight: 400; line-height: 1.6; }
-.robot-project-list { display: grid; gap: 32px; margin-top: 36px; }
+.robot-project-list { display: grid; gap: 32px; margin-top: 36px; padding-inline-start: clamp(20px, 3vw, 40px); }
 .robot-project { padding: 0; }
 .robot-project h3 { margin: 0; font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -.02em; }
 .robot-project p { margin: 8px 0 0; color: var(--muted); font-size: 15px; font-weight: 400; line-height: 1.6; }
