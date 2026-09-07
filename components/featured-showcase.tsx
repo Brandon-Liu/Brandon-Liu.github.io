@@ -67,7 +67,7 @@ export function FeaturedShowcase() {
     >
       <div className="cad-feature">
         <div className="landing-intro">
-          <h2>Hello!</h2>
+          <h2>Hello 👋</h2>
           <p>
             I’m Brandon, a Mechanical Engineering Student at Purdue, and I’m
             <br />
