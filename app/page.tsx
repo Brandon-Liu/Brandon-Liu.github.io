@@ -7,7 +7,7 @@ import { RoboticsSection } from '@/components/robotics-section';
 import { ContactSection } from '@/components/contact-section';
 
 const featuredProjects = ['CAD 1', 'CAD 2', 'CAD 3'];
-const cadProjects = ['CAD 2', 'CAD 3', 'CAD 4', 'CAD 5', 'CAD 6', 'CAD 7'];
+const cadProjects = ['CAD 1', 'CAD 2', 'CAD 3', 'CAD 4', 'CAD 5', 'CAD 6', 'CAD 7', 'CAD 8'];
 
 export default function Home() {
   const [active, setActive] = useState(0);
