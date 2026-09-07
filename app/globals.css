@@ -53,14 +53,15 @@ a { color: inherit; }
 .menu-toggle { display: none; width: 32px; height: 32px; padding: 0; place-items: center; border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink); }
 .menu-toggle svg { width: 15px; }
 
-.home-scroll { height: 700svh; background: var(--paper); }
-.robot-stage { position: sticky; top: 0; height: 100svh; overflow: hidden; }
-.robot-frame { position: absolute; inset: 90px 8vw 52px; display: grid; place-items: center; }
-.robot-placeholder { position: absolute; color: var(--ink); font-size: clamp(76px, 15vw, 230px); font-weight: 700; line-height: .8; letter-spacing: -.065em; opacity: 0; transform: scale(.92) translateY(20px); transition: opacity .55s ease, transform .7s cubic-bezier(.16,.84,.24,1); }
-.robot-placeholder.is-active { opacity: 1; transform: scale(1) translateY(0); }
-.robot-dots { position: absolute; left: 50%; bottom: 24px; display: flex; gap: 10px; transform: translateX(-50%); }
-.robot-dots button { width: 7px; height: 7px; padding: 0; border: 1px solid var(--ink); border-radius: 50%; background: transparent; cursor: pointer; transition: background .2s, transform .2s; }
-.robot-dots button.is-active { background: var(--signal); border-color: var(--signal); transform: scale(1.45); }
+.home-showcase { background: var(--paper); }
+.cad-feature { min-height: 100svh; padding: 76px var(--gutter) 0; display: grid; place-items: center; }
+.cad-feature-placeholder { color: var(--ink); font-size: clamp(86px, 17vw, 260px); font-weight: 700; line-height: .8; letter-spacing: -.065em; }
+.cad-gallery { min-height: 100svh; padding: calc(76px + 3vw) var(--gutter) var(--gutter); }
+.cad-grid { min-height: calc(100svh - 76px - 3vw - var(--gutter)); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(240px, 1fr)); gap: 12px; }
+.cad-card { display: grid; place-items: center; border: 1px solid var(--rule); background: rgba(0,66,37,.035); transition: background .25s ease, color .25s ease, transform .25s ease; }
+.cad-card span { font-size: clamp(38px, 5vw, 78px); font-weight: 650; line-height: 1; letter-spacing: -.055em; }
+.cad-card:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+.cad-card:hover, .cad-card:hover * { cursor: var(--crosshair-cursor-hover) !important; }
 
 .blank-page { min-height: 100svh; background: var(--paper); }
 
@@ -154,9 +155,10 @@ a { color: inherit; }
   .topnav { gap: 9px; }
   .topnav a { font-size: 12px; }
   .topnav .resume-link { width: 28px; height: 28px; font-size: 12px; }
-  .robot-frame { inset: 80px 7vw 62px; }
-  .robot-placeholder { font-size: 24vw; }
-  .robot-dots { left: 50%; bottom: 20px; }
+  .cad-feature { padding-top: 66px; }
+  .cad-feature-placeholder { font-size: 24vw; }
+  .cad-gallery { padding: 90px 18px 24px; }
+  .cad-grid { min-height: calc(100svh - 114px); grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(210px, 1fr)); }
   .page { padding: 90px 18px 30px; }
   .about-layout { min-height: calc(100svh - 130px); display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 45px; }
   .about-layout h1 { font-size: 19vw; line-height: .72; }
@@ -189,6 +191,8 @@ a { color: inherit; }
   .topnav { position: absolute; top: 66px; left: 0; right: 0; display: none; padding: 18px; justify-content: flex-end; background: rgba(255,255,255,.98); border-bottom: 1px solid var(--rule); }
   .topnav.is-open { display: flex; }
   .topnav a { font-size: 11px; }
+  .cad-grid { grid-template-columns: 1fr; grid-template-rows: none; }
+  .cad-card { min-height: 58vw; }
   .robot-project-grid { grid-template-columns: 1fr; }
   .robot-project:first-child { grid-column: auto; }
 }
