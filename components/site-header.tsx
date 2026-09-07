@@ -67,7 +67,7 @@ export function SiteHeader() {
     <header className="topbar">
       <a className="brand" href="/" aria-label="Brandon Liu home">
         <span className="brand-avatar" aria-hidden="true">
-          <Image src="/brandon-liu.jpg" alt="" width={80} height={80} priority />
+          <Image src="/brandon-liu-green.png" alt="" width={80} height={80} priority />
         </span>
         <span className="brand-name"><span className="brand-first">Brandon</span><span className="brand-last">Liu</span></span>
       </a>
