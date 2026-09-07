@@ -48,8 +48,7 @@ a { color: inherit; }
 .nav-outline rect { fill: none; stroke: var(--signal); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 0 100; }
 .topnav a.is-active .nav-outline-forward, .topnav a:focus-visible .nav-outline-forward { stroke-dasharray: 100 0; }
 .topnav a.is-active .nav-outline-backward, .topnav a:focus-visible .nav-outline-backward { display: none; }
-.topnav .resume-link { display: grid; width: 32px; height: 32px; place-items: center; padding: 0; border: 1px solid var(--rule); border-radius: 50%; font-size: 14px; }
-.topnav .resume-link:hover, .topnav .resume-link.is-active { border-color: var(--signal); background: var(--signal); }
+.topnav .resume-link { display: grid; width: 32px; height: 32px; place-items: center; padding: 0; font-size: 14px; }
 .menu-toggle { display: none; width: 32px; height: 32px; padding: 0; place-items: center; border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink); }
 .menu-toggle svg { width: 15px; }
 
