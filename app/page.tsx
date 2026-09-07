@@ -2,6 +2,9 @@
 
 import { ChevronDown } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { ExperienceSection } from '@/components/experience-section';
+import { RoboticsSection } from '@/components/robotics-section';
+import { ContactSection } from '@/components/contact-section';
 
 const featuredProjects = ['CAD 1', 'CAD 2', 'CAD 3'];
 const cadProjects = ['CAD 2', 'CAD 3', 'CAD 4', 'CAD 5', 'CAD 6', 'CAD 7'];
@@ -46,7 +49,7 @@ export default function Home() {
     <main className="home-showcase">
       <h1 className="sr-only">Brandon Liu CAD showcase</h1>
 
-      <section className="featured-scroll" ref={featureRef} aria-label="Featured CAD projects">
+      <section id="about" className="featured-scroll" ref={featureRef} aria-label="Featured CAD projects">
         <div className="cad-feature">
           <div className="landing-intro">
             <h2>Hello!</h2>
@@ -92,6 +95,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <ExperienceSection />
+      <RoboticsSection />
+      <ContactSection />
     </main>
   );
 }

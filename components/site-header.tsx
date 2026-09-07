@@ -3,13 +3,13 @@
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
-import { useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { useEffect, useState, type PointerEvent as ReactPointerEvent } from 'react';
 
 const links = [
-  { href: '/about', label: 'About' },
-  { href: '/experience', label: 'Experience' },
-  { href: '/robotics', label: 'Robotics' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/#about', label: 'About' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#robotics', label: 'Robotics' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 function entryPointOnPerimeter(event: ReactPointerEvent<HTMLAnchorElement>) {
@@ -62,6 +62,31 @@ function resetNavBox(event: ReactPointerEvent<HTMLAnchorElement>) {
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    if (pathname !== '/') return;
+    let frame = 0;
+    const updateSection = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        let current = '';
+        for (const link of links) {
+          const section = document.getElementById(link.href.slice(2));
+          if (section && section.getBoundingClientRect().top <= 100) current = link.href;
+        }
+        setActiveSection(current);
+      });
+    };
+    updateSection();
+    window.addEventListener('scroll', updateSection, { passive: true });
+    window.addEventListener('resize', updateSection);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', updateSection);
+      window.removeEventListener('resize', updateSection);
+    };
+  }, [pathname]);
 
   return (
     <header className="topbar">
@@ -80,8 +105,9 @@ export function SiteHeader() {
         {links.map((link) => (
           <a
             key={link.href}
-            href={link.href}
-            className={pathname === link.href ? 'is-active' : ''}
+            href={pathname === '/' ? link.href.slice(1) : link.href}
+            className={(pathname === '/' ? activeSection === link.href : pathname === link.href.replace('/#', '/')) ? 'is-active' : ''}
+            aria-current={pathname === '/' && activeSection === link.href ? 'location' : undefined}
             onPointerEnter={drawNavBox}
             onPointerLeave={resetNavBox}
             onClick={() => setOpen(false)}
