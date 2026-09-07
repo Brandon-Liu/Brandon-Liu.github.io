@@ -48,7 +48,7 @@ a { color: inherit; }
 .nav-outline rect { fill: none; stroke: var(--signal); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 0 100; }
 .topnav a.is-active .nav-outline-forward, .topnav a:focus-visible .nav-outline-forward { stroke-dasharray: 100 0; }
 .topnav a.is-active .nav-outline-backward, .topnav a:focus-visible .nav-outline-backward { display: none; }
-.topnav .resume-link { display: grid; width: 32px; height: 32px; place-items: center; padding: 0; font-size: 14px; }
+.topnav .resume-link { display: grid; width: 32px; height: 32px; place-items: center; padding: 0; font-size: 18px; }
 .menu-toggle { display: none; width: 32px; height: 32px; padding: 0; place-items: center; border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink); }
 .menu-toggle svg { width: 15px; }
 
@@ -168,7 +168,7 @@ a { color: inherit; }
   .brand-name { font-size: 21px; }
   .topnav { gap: 9px; }
   .topnav a { font-size: 12px; }
-  .topnav .resume-link { width: 28px; height: 28px; font-size: 12px; }
+  .topnav .resume-link { width: 28px; height: 28px; font-size: 16px; }
   .landing-intro { top: 90px; left: 18px; right: 18px; max-width: 430px; }
   .landing-intro h2 { font-size: 22px; }
   .landing-intro p { font-size: 14px; }
