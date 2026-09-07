@@ -54,19 +54,16 @@ a { color: inherit; }
 .menu-toggle svg { width: 15px; }
 
 .home-showcase { background: var(--paper); }
-.cad-feature { position: relative; min-height: 100svh; overflow: hidden; }
+.featured-scroll { position: relative; height: 210svh; }
+.cad-feature { position: sticky; top: 0; height: 100svh; overflow: hidden; }
 .featured-cad-stage { position: absolute; inset: 76px 13vw 78px; display: grid; place-items: center; }
 .featured-cad { grid-area: 1 / 1; color: var(--ink); font-size: clamp(86px, 17vw, 260px); font-weight: 700; line-height: .8; letter-spacing: -.065em; opacity: 0; transform: translateY(16px) scale(.96); transition: opacity .35s ease, transform .55s cubic-bezier(.16,.84,.24,1); }
 .featured-cad.is-active { opacity: 1; transform: translateY(0) scale(1); }
-.feature-arrow { position: absolute; top: 50%; width: 46px; height: 46px; padding: 0; display: grid; place-items: center; border: 1px solid var(--rule); border-radius: 50%; background: rgba(255,255,255,.78); color: var(--ink); transform: translateY(-50%); transition: background .2s ease, color .2s ease, transform .2s ease; }
-.feature-arrow:hover { background: var(--ink); color: var(--paper); transform: translateY(-50%) scale(1.05); }
-.feature-arrow svg { width: 19px; height: 19px; stroke-width: 1.5; }
-.feature-arrow-left { left: var(--gutter); }
-.feature-arrow-right { right: var(--gutter); }
-.feature-dots { position: absolute; left: 50%; bottom: 28px; display: flex; gap: 11px; transform: translateX(-50%); }
+.feature-dots { position: absolute; left: 50%; bottom: 22px; display: flex; gap: 11px; transform: translateX(-50%); }
 .feature-dots button { width: 8px; height: 8px; padding: 0; border: 1px solid var(--ink); border-radius: 50%; background: transparent; transition: background .2s ease, transform .2s ease; }
 .feature-dots button.is-active { background: var(--ink); transform: scale(1.4); }
-.portfolio-scroll-cue { position: absolute; right: var(--gutter); bottom: 20px; display: flex; align-items: center; gap: 8px; color: var(--ink); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-decoration: none; text-transform: uppercase; }
+.portfolio-scroll-cue { position: absolute; left: 50%; bottom: 46px; width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--rule); border-radius: 50%; color: var(--ink); text-decoration: none; transform: translateX(-50%); transition: background .2s ease, color .2s ease; }
+.portfolio-scroll-cue:hover { background: var(--ink); color: var(--paper); }
 .portfolio-scroll-cue svg { width: 17px; height: 17px; stroke-width: 1.5; animation: scroll-cue 1.35s ease-in-out infinite; }
 @keyframes scroll-cue { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(4px); } }
 .cad-gallery { min-height: 100svh; padding: calc(76px + 3vw) var(--gutter) var(--gutter); }
@@ -170,11 +167,8 @@ a { color: inherit; }
   .topnav .resume-link { width: 28px; height: 28px; font-size: 12px; }
   .featured-cad-stage { inset: 66px 18vw 72px; }
   .featured-cad { font-size: 24vw; }
-  .feature-arrow { width: 40px; height: 40px; }
-  .feature-arrow-left { left: 18px; }
-  .feature-arrow-right { right: 18px; }
-  .feature-dots { bottom: 24px; }
-  .portfolio-scroll-cue { right: 18px; bottom: 17px; }
+  .feature-dots { bottom: 20px; }
+  .portfolio-scroll-cue { bottom: 43px; }
   .cad-gallery { padding: 90px 18px 24px; }
   .cad-grid { min-height: calc(100svh - 114px); grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(210px, 1fr)); }
   .page { padding: 90px 18px 30px; }
