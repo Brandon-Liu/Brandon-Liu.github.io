@@ -8,7 +8,7 @@ const experience = [
   },
   {
     date: 'Aug 2023 - Present',
-    company: 'purdue sigbots',
+    company: 'Purdue Sigbots',
     url: 'https://purduesigbots.com/',
     role: 'Lead Design Engineer',
     note: 'Led 60+ students building six competition robots.',
