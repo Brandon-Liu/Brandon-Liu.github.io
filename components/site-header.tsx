@@ -75,6 +75,7 @@ export function SiteHeader() {
           const section = document.getElementById(link.href.slice(2));
           if (section && section.getBoundingClientRect().top <= 100) current = link.href;
         }
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) current = '/#contact';
         setActiveSection(current);
       });
     };
