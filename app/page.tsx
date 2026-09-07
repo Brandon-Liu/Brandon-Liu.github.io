@@ -56,7 +56,9 @@ export default function Home() {
             {featuredProjects.map((project, index) => (
               <div className={`featured-cad${index === 0 ? ' featured-cad-image' : ''}${active === index ? ' is-active' : ''}`} aria-hidden={active !== index} key={project}>
                 {index === 0 ? (
-                  <img src="/cad-1.png" alt="CAD 1: Brandon’s competition robot with a vertical lift and cone-stacking mechanism" width={1672} height={941} fetchPriority="high" />
+                  <svg className="cad-render" viewBox="310 18 835 905" preserveAspectRatio="xMidYMid meet" role="img" aria-label="CAD 1: Brandon’s competition robot with a vertical lift and cone-stacking mechanism">
+                    <image href="/cad-1.png" width="1672" height="941" />
+                  </svg>
                 ) : project}
               </div>
             ))}
