@@ -56,13 +56,16 @@ a { color: inherit; }
 .home-showcase { background: var(--paper); }
 .featured-scroll { position: relative; height: 210svh; }
 .cad-feature { position: sticky; top: 0; height: 100svh; overflow: hidden; }
-.featured-cad-stage { position: absolute; inset: 76px 13vw 78px; display: grid; place-items: center; }
+.landing-intro { position: absolute; top: 108px; left: var(--gutter); right: var(--gutter); max-width: 480px; }
+.landing-intro h2 { margin: 0 0 10px; font-size: 24px; font-weight: 500; letter-spacing: -.035em; }
+.landing-intro p { margin: 0; color: var(--muted); font-size: 15px; font-weight: 400; line-height: 1.55; }
+.featured-cad-stage { position: absolute; inset: 235px 13vw 120px; display: grid; place-items: center; }
 .featured-cad { grid-area: 1 / 1; color: var(--ink); font-size: clamp(86px, 17vw, 260px); font-weight: 700; line-height: .8; letter-spacing: -.065em; opacity: 0; transform: translateY(16px) scale(.96); transition: opacity .35s ease, transform .55s cubic-bezier(.16,.84,.24,1); }
 .featured-cad.is-active { opacity: 1; transform: translateY(0) scale(1); }
 .feature-dots { position: absolute; left: 50%; bottom: 22px; display: flex; gap: 11px; transform: translateX(-50%); }
 .feature-dots button { width: 8px; height: 8px; padding: 0; border: 1px solid var(--ink); border-radius: 50%; background: transparent; transition: background .2s ease, transform .2s ease; }
 .feature-dots button.is-active { background: var(--ink); transform: scale(1.4); }
-.portfolio-scroll-cue { position: absolute; left: 50%; bottom: 46px; width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--rule); border-radius: 50%; color: var(--ink); text-decoration: none; transform: translateX(-50%); transition: background .2s ease, color .2s ease; }
+.portfolio-scroll-cue { position: absolute; left: 50%; bottom: 46px; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 8px 14px; color: var(--ink); font-size: 10px; font-weight: 600; letter-spacing: .12em; white-space: nowrap; text-transform: uppercase; text-decoration: none; transform: translateX(-50%); transition: background .2s ease, color .2s ease; }
 .portfolio-scroll-cue:hover { background: var(--ink); color: var(--paper); }
 .portfolio-scroll-cue svg { width: 17px; height: 17px; stroke-width: 1.5; animation: scroll-cue 1.35s ease-in-out infinite; }
 @keyframes scroll-cue { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(4px); } }
@@ -165,7 +168,10 @@ a { color: inherit; }
   .topnav { gap: 9px; }
   .topnav a { font-size: 12px; }
   .topnav .resume-link { width: 28px; height: 28px; font-size: 12px; }
-  .featured-cad-stage { inset: 66px 18vw 72px; }
+  .landing-intro { top: 90px; left: 18px; right: 18px; max-width: 430px; }
+  .landing-intro h2 { font-size: 22px; }
+  .landing-intro p { font-size: 14px; }
+  .featured-cad-stage { inset: 225px 12vw 115px; }
   .featured-cad { font-size: 24vw; }
   .feature-dots { bottom: 20px; }
   .portfolio-scroll-cue { bottom: 43px; }

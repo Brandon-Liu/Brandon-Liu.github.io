@@ -48,6 +48,10 @@ export default function Home() {
 
       <section className="featured-scroll" ref={featureRef} aria-label="Featured CAD projects">
         <div className="cad-feature">
+          <div className="landing-intro">
+            <h2>Hello!</h2>
+            <p>I’m Brandon, a Mechanical Engineering Student at Purdue, and I’m currently working @ agrobotics building bombs and dildos.</p>
+          </div>
           <div className="featured-cad-stage" aria-live="polite">
             {featuredProjects.map((project, index) => (
               <div className={active === index ? 'featured-cad is-active' : 'featured-cad'} aria-hidden={active !== index} key={project}>
@@ -56,7 +60,8 @@ export default function Home() {
             ))}
           </div>
 
-          <a className="portfolio-scroll-cue" href="#portfolio" aria-label="Scroll to full portfolio">
+          <a className="portfolio-scroll-cue" href="#portfolio">
+            <span>Full Project Showcase</span>
             <ChevronDown aria-hidden="true" />
           </a>
 
