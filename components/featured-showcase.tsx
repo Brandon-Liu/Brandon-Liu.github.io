@@ -165,7 +165,7 @@ export function FeaturedShowcase() {
         <div className="featured-cad-stage" aria-live="polite">
           {featuredProjects.map((project, index) => (
             <div
-              className={`featured-cad${project.image ? ' featured-cad-image' : ''}${active === index ? ' is-active' : ''}`}
+              className={`featured-cad cad-theme-${index + 1}${project.image ? ' featured-cad-image' : ''}${active === index ? ' is-active' : ''}`}
               aria-hidden={active !== index}
               key={project.label}
             >
@@ -211,7 +211,7 @@ export function FeaturedShowcase() {
           {featuredProjects.map((project, index) => (
             <button
               type="button"
-              className={active === index ? 'is-active' : ''}
+              className={`cad-theme-${index + 1}${active === index ? ' is-active' : ''}`}
               key={project.label}
               onClick={() => showFeaturedProject(index)}
               aria-label={`Show ${project.label}`}
