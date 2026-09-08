@@ -839,7 +839,12 @@ a {
     height: 28px;
     font-size: 16px;
   }
+  .featured-scroll {
+    height: auto;
+  }
   .cad-feature {
+    position: relative;
+    min-height: 560px;
     padding: 82px 18px 101px;
     gap: 12px;
   }
@@ -852,7 +857,31 @@ a {
   .landing-intro p {
     font-size: 14px;
   }
-  .featured-cad {
+  .featured-cad-stage {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .featured-cad-stage::-webkit-scrollbar {
+    display: none;
+  }
+  .featured-cad,
+  .featured-cad.is-active {
+    position: relative;
+    inset: auto;
+    flex: 0 0 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    opacity: 1;
+    transform: none;
+    transition: none;
+    pointer-events: auto;
     font-size: 24vw;
   }
   .cad-subsystem-views,
@@ -882,7 +911,7 @@ a {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 160ms ease;
+    transition: none;
   }
   .cad-subsystem-mobile-view.is-active {
     opacity: 1;
@@ -914,6 +943,7 @@ a {
     line-height: 1.2;
     text-align: center;
     overflow-wrap: anywhere;
+    touch-action: manipulation;
     transform: none;
   }
   .cad-callout-left,

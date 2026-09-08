@@ -18,6 +18,7 @@ const canvasWidth = 1908;
 const canvasHeight = 1286;
 const imageOffset = 350;
 const hoverDelay = 150;
+const isMobileViewport = () => window.matchMedia('(max-width: 820px)').matches;
 
 export function CadSubsystemViewer({
   id,
@@ -147,13 +148,27 @@ export function CadSubsystemViewer({
               }}
               disabled={!active}
               onPointerEnter={(event) => {
-                if (event.pointerType === 'mouse') selectAfterHoverDelay(index);
+                if (event.pointerType === 'mouse' && !isMobileViewport())
+                  selectAfterHoverDelay(index);
               }}
               onPointerLeave={(event) => {
-                if (event.pointerType === 'mouse') selectAfterHoverDelay(0);
+                if (event.pointerType === 'mouse' && !isMobileViewport())
+                  selectAfterHoverDelay(0);
               }}
-              onFocus={() => selectImmediately(index)}
-              onBlur={() => selectImmediately(0)}
+              onPointerUp={(event) => {
+                if (event.pointerType !== 'mouse' && isMobileViewport())
+                  selectImmediately(index);
+              }}
+              onFocus={(event) => {
+                if (
+                  !isMobileViewport() ||
+                  event.currentTarget.matches(':focus-visible')
+                )
+                  selectImmediately(index);
+              }}
+              onBlur={() => {
+                if (!isMobileViewport()) selectImmediately(0);
+              }}
               onClick={() => selectImmediately(index)}
               onKeyDown={(event) => {
                 if (event.key === 'Escape') selectImmediately(0);
@@ -171,6 +186,10 @@ export function CadSubsystemViewer({
           type="button"
           className={`cad-full-view${selected === 0 ? ' is-active' : ''}`}
           disabled={!active}
+          onPointerUp={(event) => {
+            if (event.pointerType !== 'mouse' && isMobileViewport())
+              selectImmediately(0);
+          }}
           onClick={() => selectImmediately(0)}
           aria-pressed={selected === 0}
           aria-label={`Show ${label} full robot`}
