@@ -891,22 +891,19 @@ a {
     position: relative;
     z-index: 3;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    justify-content: safe center;
+    justify-content: center;
     gap: 7px;
-    overflow-x: auto;
     padding: 2px 1px 5px;
-    scrollbar-width: none;
-    scroll-snap-type: x proximity;
-  }
-  .cad-callout-controls::-webkit-scrollbar {
-    display: none;
   }
   .cad-callout,
   .cad-full-view {
     position: static;
-    flex: 0 0 auto;
+    flex: 0 1 auto;
     width: auto;
+    min-width: 0;
+    max-width: 100%;
     min-height: 40px;
     padding: 8px 12px;
     border: 1px solid var(--cad-rule, var(--rule));
@@ -916,8 +913,8 @@ a {
     font-size: 9px;
     line-height: 1.2;
     text-align: center;
+    overflow-wrap: anywhere;
     transform: none;
-    scroll-snap-align: start;
   }
   .cad-callout-left,
   .cad-callout-right {
