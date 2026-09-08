@@ -11,18 +11,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [{ url: '/favicon-face.png', type: 'image/png', sizes: '64x64' }],
   },
-  description:
-    'Robots, mechanisms, and thoughtful machine design by mechanical engineer Brandon Liu.',
   openGraph: {
     title: 'Brandon Liu',
-    description: 'Robots, mechanisms, and thoughtful machine design.',
-    images: ['/og.png'],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Brandon Liu',
-    description: 'Robots, mechanisms, and thoughtful machine design.',
-    images: ['/og.png'],
   },
 };
 
