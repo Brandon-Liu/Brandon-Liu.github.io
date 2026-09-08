@@ -30,7 +30,7 @@ const experience = [
   {
     date: 'Aug - Dec 2024',
     company: 'Advanced Packaging and Semiconductor Lab at Purdue',
-    url: 'https://www.can-wu.com/home',
+    url: 'https://s-pack.org/',
     role: 'Undergraduate Research Fellow',
     note: 'Optimized fluid flow and built 3D-printed prototypes for CES 2025.',
   },
