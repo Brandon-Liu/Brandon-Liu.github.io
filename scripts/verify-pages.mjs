@@ -12,7 +12,7 @@ for (const route of ['', 'about', 'contact', 'experience', 'robotics']) {
   assert.ok(existsSync(file), `Missing static page: ${file}`);
   const html = readFileSync(file, 'utf8');
   assert.ok(!html.includes('/_next/image?'), `${file} requires a server image optimizer`);
-  for (const [, reference] of html.matchAll(/(?:src|href)="(\/[^"#?]*)[^\"]*"/g)) {
+  for (const [, reference] of html.matchAll(/(?:src|href)="(\/[^"#?]*)[^"]*"/g)) {
     if (reference.startsWith('//')) continue;
     assert.ok(existsSync(join(output, reference)), `Missing local asset in ${file}: ${reference}`);
   }

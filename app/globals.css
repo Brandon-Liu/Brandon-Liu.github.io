@@ -968,8 +968,15 @@ a {
   .feature-dots {
     bottom: 20px;
   }
+  .feature-dots button {
+    border-color: #606060;
+  }
+  .feature-dots button.is-active {
+    background: #606060;
+  }
   .portfolio-scroll-cue {
     bottom: 43px;
+    color: #606060;
   }
   .cad-gallery {
     padding: 90px 18px 24px;
