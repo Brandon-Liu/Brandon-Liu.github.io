@@ -2,10 +2,11 @@ import type { Metadata, Viewport } from 'next';
 import { SiteHeader } from '@/components/site-header';
 import './globals.css';
 
+// Portfolio content is identical for every visitor and can be pre-rendered.
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    'https://brandon-liu-mechanical-engineer.yoosang-cho.chatgpt.site',
-  ),
+  metadataBase: new URL('https://brandon-liu.github.io'),
   title: 'Brandon Liu',
   icons: {
     icon: [{ url: '/favicon-face.png', type: 'image/png', sizes: '64x64' }],

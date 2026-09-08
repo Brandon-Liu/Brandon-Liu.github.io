@@ -19,8 +19,14 @@ export function AboutSection() {
             />
           </div>
           <div className="about-me-copy">
-            <p>I’m Brandon, a Mechanical Engineering student at Purdue.</p>
-            <p>I’m into robotics, climbing, and Szechuan spice.</p>
+            <p>
+              I’m Brandon, a Senior at <strong>Purdue University</strong> studying{' '}
+              <strong>Mechanical Engineering</strong> and Statistics
+            </p>
+            <p>
+              I’m into robotics, climbing, skiing, mountain biking and I love
+              rolling bowl.
+            </p>
           </div>
         </div>
       </div>

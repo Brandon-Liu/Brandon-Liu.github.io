@@ -7,6 +7,22 @@ import { defineConfig } from 'vite';
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
 
 export default defineConfig(async () => {
+  // GitHub Pages serves static files; pre-render every route at build time.
+  if (process.env.GITHUB_PAGES === 'true') {
+    return {
+      css: { postcss: { plugins: [tailwindcss()] } },
+      plugins: [
+        vinext({
+          nextConfig: {
+            output: 'export',
+            trailingSlash: false,
+            images: { unoptimized: true },
+          },
+        }),
+      ],
+    };
+  }
+
   // Keep Wrangler and Miniflare state project-local. These are non-secret tool
   // settings; application environment belongs in ignored `.env*` files.
   process.env.WRANGLER_WRITE_LOGS ??= 'false';

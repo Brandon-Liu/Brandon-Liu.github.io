@@ -1,5 +1,7 @@
-import { redirect } from 'next/navigation';
+import { SectionRedirect } from '@/components/section-redirect';
+
+export const dynamic = 'force-static';
 
 export default function RoboticsPage() {
-  redirect('/#robotics');
+  return <SectionRedirect section="robotics" />;
 }

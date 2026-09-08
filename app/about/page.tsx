@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 export default function AboutPage() {
   return (
     <main className="content-page about-page">

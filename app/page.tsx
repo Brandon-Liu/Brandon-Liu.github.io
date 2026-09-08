@@ -4,6 +4,8 @@ import { ExperienceSection } from '@/components/experience-section';
 import { RoboticsSection } from '@/components/robotics-section';
 import { ContactSection } from '@/components/contact-section';
 
+export const dynamic = 'force-static';
+
 const cadProjects = [
   'CAD 1',
   'CAD 2',
