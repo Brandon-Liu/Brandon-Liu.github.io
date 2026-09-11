@@ -2,84 +2,13 @@
 
 import { ChevronDown } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { CadSubsystemViewer, type CadView } from './cad-subsystem-viewer';
-
-const cad1Views: CadView[] = [
-  { image: '/cad-1.png?v=bd91f3ab', label: 'Full robot' },
-  {
-    image: '/cad-1-view-2.png?v=ad92bdf3',
-    label: 'Lift assembly',
-    callout: { side: 'left', y: 380, target: [360, 660] },
-  },
-  {
-    image: '/cad-1-view-3.png?v=dafceb2e',
-    label: 'Chassis',
-    callout: { side: 'right', y: 650, target: [850, 790] },
-  },
-  {
-    image: '/cad-1-view-4.png?v=30180867',
-    label: 'Intake System',
-    callout: { side: 'left', y: 1020, target: [540, 1060] },
-  },
-];
-
-const cad2Views: CadView[] = [
-  { image: '/cad-3-view-3.png', label: 'Full robot' },
-  {
-    image: '/cad-3-view-1.png',
-    label: 'Slingshot Assembly',
-    callout: { side: 'right', y: 200, target: [770, 280] },
-  },
-  {
-    image: '/cad-3-view-2.png',
-    label: 'Matchload Bar',
-    callout: { side: 'left', y: 850, target: [445, 820] },
-  },
-  {
-    image: '/cad-3-view-4.png',
-    label: 'Intake System',
-    callout: { side: 'left', y: 530, target: [545, 730] },
-  },
-  {
-    image: '/cad-3-view-5.png',
-    label: 'Chassis',
-    callout: { side: 'right', y: 1080, target: [970, 1090] },
-  },
-];
-
-const featuredProjects = [
-  {
-    label: 'CAD 1',
-    image: '/cad-1.png',
-    width: 1208,
-    height: 1290,
-    viewBox: '0 0 1208 1290',
-    description: 'CAD 1: competition robot assembly shown in Autodesk Inventor',
-  },
-  {
-    label: 'CAD 2',
-    image: cad2Views[0].image,
-    width: 1208,
-    height: 1290,
-    viewBox: '0 0 1208 1286',
-    description:
-      'CAD 2: grayscale competition robot assembly with an intake and lifting mechanism',
-  },
-  {
-    label: 'CAD 3',
-    image: '/cad-2.png',
-    width: 1672,
-    height: 941,
-    viewBox: '310 18 835 905',
-    description:
-      'CAD 3: competition robot with a vertical lift and cone-stacking mechanism',
-  },
-];
+import { CadSubsystemViewer } from './cad-subsystem-viewer';
+import { featuredProjects } from './featured-projects';
+import { ProfileIntro } from './profile-intro';
 
 export function FeaturedShowcase() {
   const [active, setActive] = useState(0);
-  const [activeCad1View, setActiveCad1View] = useState(0);
-  const [activeCad2View, setActiveCad2View] = useState(0);
+  const [selectedView, setSelectedView] = useState(0);
   const featureRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
 
@@ -116,8 +45,7 @@ export function FeaturedShowcase() {
                 Math.floor(progress * featuredProjects.length),
               );
         if (nextProject !== currentProject) {
-          setActiveCad1View(0);
-          setActiveCad2View(0);
+          setSelectedView(0);
           currentProject = nextProject;
         }
         setActive(nextProject);
@@ -187,8 +115,7 @@ export function FeaturedShowcase() {
         <div className="landing-intro">
           <h2>Hello!</h2>
           <p>
-            I’m Brandon, a Senior at <strong>Purdue University</strong> studying{' '}
-            <strong>Mechanical Engineering</strong> and Statistics
+            <ProfileIntro />
             <br />
             I worked @{' '}
             <a
@@ -215,21 +142,21 @@ export function FeaturedShowcase() {
         <div className="featured-cad-stage" ref={stageRef} aria-live="polite">
           {featuredProjects.map((project, index) => (
             <div
-              className={`featured-cad cad-theme-${index + 1}${project.image ? ' featured-cad-image' : ''}${active === index ? ' is-active' : ''}`}
+              className={`featured-cad ${project.theme}${active === index ? ' is-active' : ''}`}
               aria-hidden={active !== index}
-              key={project.label}
+              key={project.id}
             >
-              {index === 0 || index === 1 ? (
+              {project.kind === 'subsystems' ? (
                 <CadSubsystemViewer
-                  id={`cad-${index + 1}`}
+                  id={project.id}
                   label={project.label}
-                  views={index === 0 ? cad1Views : cad2Views}
-                  selected={index === 0 ? activeCad1View : activeCad2View}
-                  onSelect={index === 0 ? setActiveCad1View : setActiveCad2View}
+                  views={project.views}
+                  selected={active === index ? selectedView : 0}
+                  onSelect={setSelectedView}
                   active={active === index}
-                  small={index === 1}
+                  small={project.small}
                 />
-              ) : project.image ? (
+              ) : (
                 <svg
                   className="cad-render"
                   viewBox={project.viewBox}
@@ -242,8 +169,6 @@ export function FeaturedShowcase() {
                     height={project.height}
                   />
                 </svg>
-              ) : (
-                project.label
               )}
             </div>
           ))}
@@ -261,8 +186,8 @@ export function FeaturedShowcase() {
           {featuredProjects.map((project, index) => (
             <button
               type="button"
-              className={`cad-theme-${index + 1}${active === index ? ' is-active' : ''}`}
-              key={project.label}
+              className={`${project.theme}${active === index ? ' is-active' : ''}`}
+              key={project.id}
               onClick={() => showFeaturedProject(index)}
               aria-label={`Show ${project.label}`}
               aria-current={active === index ? 'true' : undefined}

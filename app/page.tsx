@@ -18,7 +18,7 @@ const cadProjects = [
 
 export default function Home() {
   return (
-    <main className="home-showcase">
+    <main>
       <h1 className="sr-only">Brandon Liu CAD showcase</h1>
       <FeaturedShowcase />
       <section

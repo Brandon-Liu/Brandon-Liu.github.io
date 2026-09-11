@@ -4,6 +4,13 @@
   "printWidth": 80,
   "sortPackageJson": false,
   "ignorePatterns": [
+    "node_modules/**",
+    "dist/**",
+    ".wrangler/**",
+    ".next/**",
+    ".vinext/**",
+    "outputs/**",
+    "work/**",
     "package-lock.json",
     "pnpm-lock.yaml",
     "yarn.lock",

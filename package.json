@@ -11,10 +11,11 @@
     "build:pages": "GITHUB_PAGES=true vinext build && node scripts/verify-pages.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
+    "typecheck": "tsc --noEmit",
+    "format:check": "oxfmt --check",
     "format": "oxfmt"
   },
   "dependencies": {
-    "ipaddr.js": "^2.5.0",
     "lucide-react": "1.31.0",
     "react": "19.2.6",
     "react-dom": "19.2.6",

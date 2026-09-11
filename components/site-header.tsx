@@ -33,10 +33,16 @@ export function SiteHeader() {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         let current = '';
+        let closestTop = -Infinity;
         for (const link of links) {
           const section = document.getElementById(link.href.slice(2));
-          if (section && section.getBoundingClientRect().top <= 100)
+          if (!section) continue;
+          const top = section.getBoundingClientRect().top;
+          // Menu order differs from page order; use the closest passed section.
+          if (top <= 100 && top > closestTop) {
             current = link.href;
+            closestTop = top;
+          }
         }
         if (
           window.scrollY + window.innerHeight >=
@@ -81,7 +87,7 @@ export function SiteHeader() {
       <button
         type="button"
         className="menu-toggle"
-        onClick={() => setOpen(!open)}
+        onClick={() => setOpen((wasOpen) => !wasOpen)}
         aria-expanded={open}
         aria-controls="main-navigation"
         aria-label="Toggle navigation"

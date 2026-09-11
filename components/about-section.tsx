@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ProfileIntro } from './profile-intro';
 
 const coursework = [
   'Autonomous Systems',
@@ -42,12 +43,10 @@ export function AboutSection() {
           </div>
           <div className="about-me-copy">
             <p>
-              I’m Brandon, a Senior at <strong>Purdue University</strong> studying{' '}
-              <strong>Mechanical Engineering</strong> and Statistics
+              <ProfileIntro />
             </p>
             <p>
-              I’m into robotics, climbing, skiing, mountain biking and I love
-              {' '}
+              I’m into robotics, climbing, skiing, mountain biking and I love{' '}
               <a
                 className="place-link"
                 href="https://maps.app.goo.gl/QddCSwNigy6zTGVF8"
@@ -58,7 +57,7 @@ export function AboutSection() {
               </a>
               .
             </p>
-            <p className="coursework-preview">
+            <p>
               <strong>Relevant coursework:</strong> Autonomous Systems, Heat and
               Mass Transfer, Controls 2, Machine Design, Partial Differential
               Equations, Linear Circuit Analysis …

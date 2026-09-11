@@ -1,22 +1,15 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-
-export type CadView = {
-  image: string;
-  label: string;
-  callout?: {
-    side: 'left' | 'right';
-    y: number;
-    target: [number, number];
-  };
-};
+import type { CadView } from './featured-projects';
 
 // Images and leader lines share the same coordinates so they stay registered
 // at every viewport size. The extra 350 units on either side hold the labels.
-const canvasWidth = 1908;
+const imageWidth = 1208;
+const imageHeight = 1290;
 const canvasHeight = 1286;
 const imageOffset = 350;
+const canvasWidth = imageWidth + imageOffset * 2;
 const hoverDelay = 150;
 const isMobileViewport = () => window.matchMedia('(max-width: 820px)').matches;
 
@@ -74,20 +67,20 @@ export function CadSubsystemViewer({
           <svg
             key={view.image}
             className={`cad-subsystem-view${selected === index ? ' is-active' : ''}`}
-            viewBox={`-350 0 ${canvasWidth} ${canvasHeight}`}
+            viewBox={`${-imageOffset} 0 ${canvasWidth} ${canvasHeight}`}
             aria-label={`${label}: ${view.label}`}
             aria-hidden={!active || selected !== index}
           >
             <title>{`${label}: ${view.label}`}</title>
             <defs>
               <clipPath id={`${id}-crop-${index}`}>
-                <rect width="1208" height="1286" />
+                <rect width={imageWidth} height={canvasHeight} />
               </clipPath>
             </defs>
             <image
               href={view.image}
-              width="1208"
-              height="1290"
+              width={imageWidth}
+              height={imageHeight}
               clipPath={`url(#${id}-crop-${index})`}
             />
           </svg>
@@ -97,19 +90,19 @@ export function CadSubsystemViewer({
           <svg
             key={`mobile-${view.image}`}
             className={`cad-subsystem-mobile-view${selected === index ? ' is-active' : ''}`}
-            viewBox={`0 0 1208 ${canvasHeight}`}
+            viewBox={`0 0 ${imageWidth} ${canvasHeight}`}
             preserveAspectRatio="xMidYMid meet"
             aria-label={`${label}: ${view.label}`}
             aria-hidden={!active || selected !== index}
           >
             <title>{`${label}: ${view.label}`}</title>
-            <image href={view.image} width="1208" height="1290" />
+            <image href={view.image} width={imageWidth} height={imageHeight} />
           </svg>
         ))}
 
         <svg
           className="cad-callout-lines"
-          viewBox={`-350 0 ${canvasWidth} ${canvasHeight}`}
+          viewBox={`${-imageOffset} 0 ${canvasWidth} ${canvasHeight}`}
           aria-hidden="true"
         >
           {views.map((view, index) => {
