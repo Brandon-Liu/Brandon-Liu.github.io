@@ -657,17 +657,10 @@ a {
   letter-spacing: -0.02em;
 }
 .organization-link {
-  text-decoration: none;
+  text-decoration-line: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
   transition: color 0.2s ease;
-}
-.organization-link::after {
-  content: '↗' / '';
-  display: inline-block;
-  margin-inline-start: 0.3em;
-  font-size: 0.8em;
-  font-weight: 400;
 }
 .organization-link:hover {
   color: #337957;

@@ -199,8 +199,8 @@ export function FeaturedShowcase() {
             >
               agrobotics
             </a>
-            , (pre-series A) building humanoid strawberry picking robots, and
-            lead the{' '}
+            , building humanoid strawberry picking robots, and currently lead
+            the{' '}
             <a
               className="organization-link"
               href="https://purduesigbots.com/"
@@ -208,8 +208,8 @@ export function FeaturedShowcase() {
               rel="noreferrer"
             >
               Purdue Sigbots
-            </a>{' '}
-            Robotics team
+            </a>
+            . Check out some of my work!
           </p>
         </div>
         <div className="featured-cad-stage" ref={stageRef} aria-live="polite">
