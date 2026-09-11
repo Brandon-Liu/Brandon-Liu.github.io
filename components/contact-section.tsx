@@ -14,9 +14,13 @@ export function ContactSection() {
         >
           LinkedIn
         </a>
-        <span aria-disabled="true" title="GitHub profile link coming soon">
+        <a
+          href="https://github.com/Brandon-Liu"
+          target="_blank"
+          rel="noreferrer"
+        >
           GitHub
-        </span>
+        </a>
         <a href="/brandon-liu-resume.pdf" target="_blank" rel="noreferrer">
           Resume
         </a>

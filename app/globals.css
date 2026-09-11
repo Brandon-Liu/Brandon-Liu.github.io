@@ -584,15 +584,13 @@ a {
 }
 
 .about-me-content,
-.experience-content,
-.robotics-content {
+.experience-content {
   width: 100%;
   max-width: 960px;
   margin-inline: auto;
 }
 .about-me-content > h2,
-.experience-content > h2,
-.robotics-content > h2 {
+.experience-content > h2 {
   margin: 0;
   font-size: clamp(30px, 3vw, 40px);
   font-weight: 600;
@@ -601,7 +599,7 @@ a {
 }
 .about-me-profile {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 28px;
   margin-top: 36px;
   padding-inline-start: clamp(20px, 3vw, 40px);
@@ -611,7 +609,7 @@ a {
   height: 140px;
   flex: 0 0 140px;
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--ink);
 }
 .about-me-portrait img {
@@ -631,6 +629,42 @@ a {
 .about-me-copy p + p {
   margin-top: 8px;
   color: var(--muted);
+}
+.coursework-details {
+  margin-top: 7px;
+  color: var(--muted);
+}
+.coursework-details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 650;
+}
+.coursework-details summary::-webkit-details-marker {
+  display: none;
+}
+.coursework-details summary::after {
+  content: '▾';
+  font-size: 10px;
+  transition: transform 160ms ease;
+}
+.coursework-details[open] summary::after {
+  transform: rotate(180deg);
+}
+.coursework-details ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px 24px;
+  margin: 12px 0 0;
+  padding: 12px 0 0 18px;
+  border-top: 1px solid var(--rule);
+}
+.coursework-details li {
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .experience-list {
@@ -693,37 +727,6 @@ a {
   line-height: 1.6;
 }
 
-.robotics-summary {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.6;
-}
-.robot-project-list {
-  display: grid;
-  gap: 32px;
-  margin-top: 36px;
-  padding-inline-start: clamp(20px, 3vw, 40px);
-}
-.robot-project {
-  padding: 0;
-}
-.robot-project h3 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
-}
-.robot-project p {
-  margin: 8px 0 0;
-  color: var(--muted);
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.6;
-}
-
 .contact-page {
   display: flex;
   min-height: 100svh;
@@ -736,8 +739,7 @@ a {
   scroll-margin-top: 76px;
 }
 .scroll-section.about-me-section,
-.scroll-section.experience-page,
-.scroll-section.robotics-page {
+.scroll-section.experience-page {
   border-top: 0;
 }
 .scroll-section.contact-page {
@@ -1003,6 +1005,9 @@ a {
     width: 112px;
     height: 112px;
     flex-basis: 112px;
+  }
+  .coursework-details ul {
+    grid-template-columns: 1fr;
   }
   .menu-toggle {
     display: grid;

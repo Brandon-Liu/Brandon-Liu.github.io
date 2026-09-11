@@ -1,7 +1,6 @@
 import { FeaturedShowcase } from '@/components/featured-showcase';
 import { AboutSection } from '@/components/about-section';
 import { ExperienceSection } from '@/components/experience-section';
-import { RoboticsSection } from '@/components/robotics-section';
 import { ContactSection } from '@/components/contact-section';
 
 export const dynamic = 'force-static';
@@ -24,9 +23,12 @@ export default function Home() {
       <FeaturedShowcase />
       <section
         className="cad-gallery"
-        id="portfolio"
-        aria-label="More CAD projects"
+        id="projects"
+        aria-labelledby="projects-title"
       >
+        <h2 className="sr-only" id="projects-title">
+          Projects
+        </h2>
         <div className="cad-grid">
           {cadProjects.map((project) => (
             <article className="cad-card" key={project}>
@@ -37,7 +39,6 @@ export default function Home() {
       </section>
       <AboutSection />
       <ExperienceSection />
-      <RoboticsSection />
       <ContactSection />
     </main>
   );

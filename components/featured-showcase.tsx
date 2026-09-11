@@ -249,7 +249,7 @@ export function FeaturedShowcase() {
           ))}
         </div>
 
-        <a className="portfolio-scroll-cue" href="#portfolio">
+        <a className="portfolio-scroll-cue" href="#projects">
           <span>Full Project Showcase</span>
           <ChevronDown aria-hidden="true" />
         </a>
