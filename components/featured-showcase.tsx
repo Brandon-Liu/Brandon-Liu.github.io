@@ -199,7 +199,17 @@ export function FeaturedShowcase() {
             >
               agrobotics
             </a>
-            , (Pre-series A) building humanoid strawberry picking robots
+            , (pre-series A) building humanoid strawberry picking robots, and
+            lead the{' '}
+            <a
+              className="organization-link"
+              href="https://purduesigbots.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Purdue Sigbots
+            </a>{' '}
+            Robotics team
           </p>
         </div>
         <div className="featured-cad-stage" ref={stageRef} aria-live="polite">
