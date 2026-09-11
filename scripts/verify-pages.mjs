@@ -7,7 +7,7 @@ const manifest = JSON.parse(readFileSync('dist/server/vinext-prerender.json', 'u
 for (const route of manifest.routes) {
   assert.equal(route.status, 'rendered', `Static export failed for ${route.route}`);
 }
-for (const route of ['', 'about', 'contact', 'experience', 'robotics']) {
+for (const route of ['', 'about', 'contact', 'experience', 'projects']) {
   const file = join(output, route ? `${route}.html` : 'index.html');
   assert.ok(existsSync(file), `Missing static page: ${file}`);
   const html = readFileSync(file, 'utf8');
