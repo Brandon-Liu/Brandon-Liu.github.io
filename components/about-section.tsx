@@ -2,24 +2,24 @@ import Image from 'next/image';
 
 const coursework = [
   'Autonomous Systems',
-  'Heat and Mass Transfer',
-  'Controls 2',
-  'Machine Design',
-  'Partial Differential Equations',
-  'Linear Circuit Analysis',
-  'Thermodynamics',
   'Mobile Microrobotics',
   'Controls 1',
-  'Mechanics of Materials',
-  'Probability',
-  'Introductory Fluid Mechanics',
-  'Introduction to Statistics',
-  'Dynamics',
+  'Controls 2',
   'Statics',
-  'C Programming',
+  'Dynamics',
+  'Mechanics of Materials',
   'Structure and Properties of Materials',
+  'Machine Design',
+  'Thermodynamics',
+  'Heat and Mass Transfer',
+  'Introductory Fluid Mechanics',
+  'Linear Circuit Analysis',
+  'C Programming',
   'Differential Equations',
+  'Partial Differential Equations',
   'Linear Algebra',
+  'Probability',
+  'Introduction to Statistics',
 ];
 
 export function AboutSection() {
@@ -47,7 +47,16 @@ export function AboutSection() {
             </p>
             <p>
               I’m into robotics, climbing, skiing, mountain biking and I love
-              rolling bowl.
+              {' '}
+              <a
+                className="place-link"
+                href="https://maps.app.goo.gl/QddCSwNigy6zTGVF8"
+                target="_blank"
+                rel="noreferrer"
+              >
+                rolling bowl
+              </a>
+              .
             </p>
             <p className="coursework-preview">
               <strong>Relevant coursework:</strong> Autonomous Systems, Heat and

@@ -630,6 +630,22 @@ a {
   margin-top: 8px;
   color: var(--muted);
 }
+.place-link {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 160ms ease;
+}
+.place-link:hover,
+.place-link:focus-visible {
+  text-decoration-color: currentColor;
+}
+.place-link:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 3px;
+}
 .coursework-details {
   margin-top: 7px;
   color: var(--muted);
@@ -655,14 +671,15 @@ a {
   transform: rotate(180deg);
 }
 .coursework-details ul {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 5px 24px;
+  columns: 2;
+  column-gap: 32px;
   margin: 12px 0 0;
-  padding: 12px 0 0 18px;
+  padding: 14px 0 0 18px;
   border-top: 1px solid var(--rule);
 }
 .coursework-details li {
+  break-inside: avoid;
+  margin-bottom: 5px;
   font-size: 13px;
   line-height: 1.45;
 }
@@ -1007,7 +1024,7 @@ a {
     flex-basis: 112px;
   }
   .coursework-details ul {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
   .menu-toggle {
     display: grid;
