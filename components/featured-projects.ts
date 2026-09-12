@@ -80,7 +80,7 @@ export const featuredProjects: FeaturedProject[] = [
     label: 'Override Robot',
     theme: '',
     kind: 'image',
-    image: '/cad-2.png',
+    image: '/override-robot-white.png',
     width: 1672,
     height: 941,
     viewBox: '310 18 835 905',

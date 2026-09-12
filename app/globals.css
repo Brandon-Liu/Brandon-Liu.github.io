@@ -463,7 +463,7 @@ a {
   display: grid;
   place-items: center;
   border: 1px solid var(--rule);
-  background: rgba(0, 66, 37, 0.035);
+  background: #fff;
   transition:
     background 0.25s ease,
     color 0.25s ease,
@@ -476,8 +476,8 @@ a {
   letter-spacing: -0.055em;
 }
 .cad-card:hover {
-  background: var(--ink);
-  color: var(--paper);
+  background: #fff;
+  color: var(--ink);
   transform: translateY(-2px);
 }
 .cad-card-with-image {
@@ -499,6 +499,13 @@ a {
   letter-spacing: -0.02em;
   text-align: center;
   text-wrap: balance;
+}
+/* Normalize the edited images' near-white background pixels to pure white. */
+img[src='/cooling-manifold-white.png'],
+img[src='/competition-robot-white.png'],
+img[src='/yellow-bot-white.png'],
+image[href='/override-robot-white.png'] {
+  filter: brightness(1.01);
 }
 .cad-card-with-image:hover {
   background: #fff;

@@ -19,7 +19,8 @@ const cadProjects: {
     label: project.label,
     width: project.kind === 'subsystems' ? 1208 : project.width,
     height: project.kind === 'subsystems' ? 1290 : project.height,
-    viewBox: project.kind === 'image' ? project.viewBox : undefined,
+    // Match the featured viewer's crop to hide the source images' bottom edge.
+    viewBox: project.kind === 'image' ? project.viewBox : '0 0 1208 1286',
     image:
       project.kind === 'subsystems' ? project.views[0].image : project.image,
     description:
@@ -36,15 +37,34 @@ const cadProjects: {
       'Over Under Robot: full competition robot with a roller intake and linkage lift',
   },
   {
+    label: 'Diffy Lift Robot',
+    image: '/diffy-lift-robot.png',
+    width: 1696,
+    height: 1455,
+    description: 'Diffy Lift Robot CAD assembly with an extended vertical lift',
+  },
+  {
+    label: 'OU Worlds Robot',
+    image: '/competition-robot-white.png',
+    width: 1083,
+    height: 1453,
+    description:
+      'OU Worlds Robot with its full lift extended on a white background',
+  },
+  {
+    label: 'Yellow Bot',
+    image: '/yellow-bot-white.png',
+    width: 1305,
+    height: 1206,
+    description: 'Yellow Bot competition robot on a white background',
+  },
+  {
     label: 'Cooling Manifold',
-    image: '/cad-5.png',
-    width: 997,
-    height: 614,
+    image: '/cooling-manifold-white.png',
+    width: 1599,
+    height: 984,
     description: 'Cooling Manifold CAD assembly',
   },
-  { label: 'CAD 6' },
-  { label: 'CAD 7' },
-  { label: 'CAD 8' },
 ];
 
 export default function Home() {
