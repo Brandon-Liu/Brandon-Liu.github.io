@@ -486,7 +486,7 @@ a {
   padding: 12px;
   background: #fff;
 }
-.cad-card-with-image img {
+.cad-card-with-image :is(img, svg) {
   display: block;
   width: 100%;
   height: 100%;

@@ -13,11 +13,13 @@ const cadProjects: {
   description?: string;
   width?: number;
   height?: number;
+  viewBox?: string;
 }[] = [
   ...featuredProjects.map((project) => ({
     label: project.label,
     width: project.kind === 'subsystems' ? 1208 : project.width,
     height: project.kind === 'subsystems' ? 1290 : project.height,
+    viewBox: project.kind === 'image' ? project.viewBox : undefined,
     image:
       project.kind === 'subsystems' ? project.views[0].image : project.image,
     description:
@@ -64,17 +66,31 @@ export default function Home() {
               className={`cad-card${project.image ? ' cad-card-with-image' : ''}`}
               key={project.label}
             >
-              {project.image && (
-                <Image
-                  src={project.image}
-                  alt={project.description ?? project.label}
-                  width={project.width}
-                  height={project.height}
-                  unoptimized
-                  loading="lazy"
-                  decoding="async"
-                />
-              )}
+              {project.image &&
+                (project.viewBox ? (
+                  <svg
+                    viewBox={project.viewBox}
+                    preserveAspectRatio="xMidYMid meet"
+                    aria-label={project.description ?? project.label}
+                  >
+                    <title>{project.description ?? project.label}</title>
+                    <image
+                      href={project.image}
+                      width={project.width}
+                      height={project.height}
+                    />
+                  </svg>
+                ) : (
+                  <Image
+                    src={project.image}
+                    alt={project.description ?? project.label}
+                    width={project.width}
+                    height={project.height}
+                    unoptimized
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ))}
               <span>{project.label}</span>
             </article>
           ))}
