@@ -480,6 +480,27 @@ a {
   color: var(--paper);
   transform: translateY(-2px);
 }
+.cad-card-with-image {
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 12px;
+  background: #fff;
+}
+.cad-card-with-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+}
+.cad-card-with-image span {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+}
+.cad-card-with-image:hover {
+  background: #fff;
+  color: var(--ink);
+}
 .content-page {
   min-height: 100svh;
   padding: 126px var(--gutter) 48px;

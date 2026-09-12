@@ -1,19 +1,48 @@
+import Image from 'next/image';
 import { FeaturedShowcase } from '@/components/featured-showcase';
 import { AboutSection } from '@/components/about-section';
 import { ExperienceSection } from '@/components/experience-section';
 import { ContactSection } from '@/components/contact-section';
+import { featuredProjects } from '@/components/featured-projects';
 
 export const dynamic = 'force-static';
 
-const cadProjects = [
-  'CAD 1',
-  'CAD 2',
-  'CAD 3',
-  'CAD 4',
-  'CAD 5',
-  'CAD 6',
-  'CAD 7',
-  'CAD 8',
+const cadProjects: {
+  label: string;
+  image?: string;
+  description?: string;
+  width?: number;
+  height?: number;
+}[] = [
+  ...featuredProjects.map((project) => ({
+    label: project.label,
+    width: project.kind === 'subsystems' ? 1208 : project.width,
+    height: project.kind === 'subsystems' ? 1290 : project.height,
+    image:
+      project.kind === 'subsystems' ? project.views[0].image : project.image,
+    description:
+      project.kind === 'subsystems'
+        ? `${project.label}: full competition robot CAD assembly`
+        : project.description,
+  })),
+  {
+    label: 'CAD 4',
+    image: '/cad-4.png',
+    width: 1968,
+    height: 1248,
+    description:
+      'CAD 4: full competition robot with a roller intake and linkage lift',
+  },
+  {
+    label: 'CAD 5',
+    image: '/cad-5.png',
+    width: 997,
+    height: 614,
+    description: 'CAD 5: mechanical assembly with blue and red pin plates',
+  },
+  { label: 'CAD 6' },
+  { label: 'CAD 7' },
+  { label: 'CAD 8' },
 ];
 
 export default function Home() {
@@ -31,8 +60,22 @@ export default function Home() {
         </h2>
         <div className="cad-grid">
           {cadProjects.map((project) => (
-            <article className="cad-card" key={project}>
-              <span>{project}</span>
+            <article
+              className={`cad-card${project.image ? ' cad-card-with-image' : ''}`}
+              key={project.label}
+            >
+              {project.image && (
+                <Image
+                  src={project.image}
+                  alt={project.description ?? project.label}
+                  width={project.width}
+                  height={project.height}
+                  unoptimized
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              <span>{project.label}</span>
             </article>
           ))}
         </div>
