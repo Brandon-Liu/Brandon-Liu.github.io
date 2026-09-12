@@ -495,7 +495,10 @@ a {
 }
 .cad-card-with-image span {
   font-size: 14px;
+  line-height: 1.3;
   letter-spacing: -0.02em;
+  text-align: center;
+  text-wrap: balance;
 }
 .cad-card-with-image:hover {
   background: #fff;

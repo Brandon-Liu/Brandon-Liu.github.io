@@ -28,19 +28,19 @@ const cadProjects: {
         : project.description,
   })),
   {
-    label: 'CAD 4',
+    label: 'Over Under Robot',
     image: '/cad-4.png',
     width: 1968,
     height: 1248,
     description:
-      'CAD 4: full competition robot with a roller intake and linkage lift',
+      'Over Under Robot: full competition robot with a roller intake and linkage lift',
   },
   {
-    label: 'CAD 5',
+    label: 'Cooling Manifold',
     image: '/cad-5.png',
     width: 997,
     height: 614,
-    description: 'CAD 5: mechanical assembly with blue and red pin plates',
+    description: 'Cooling Manifold CAD assembly',
   },
   { label: 'CAD 6' },
   { label: 'CAD 7' },

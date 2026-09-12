@@ -23,7 +23,7 @@ type FeaturedProject = { id: string; label: string; theme: string } & (
 export const featuredProjects: FeaturedProject[] = [
   {
     id: 'cad-1',
-    label: 'CAD 1',
+    label: 'High Stakes Robot',
     theme: 'cad-theme-1',
     kind: 'subsystems',
     views: [
@@ -47,7 +47,7 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     id: 'cad-2',
-    label: 'CAD 2',
+    label: 'Push Back Slingshot',
     theme: 'cad-theme-2',
     kind: 'subsystems',
     small: true,
@@ -77,7 +77,7 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     id: 'cad-3',
-    label: 'CAD 3',
+    label: 'Override Robot',
     theme: '',
     kind: 'image',
     image: '/cad-2.png',
@@ -85,6 +85,6 @@ export const featuredProjects: FeaturedProject[] = [
     height: 941,
     viewBox: '310 18 835 905',
     description:
-      'CAD 3: competition robot with a vertical lift and cone-stacking mechanism',
+      'Override Robot: competition robot with a vertical lift and cone-stacking mechanism',
   },
 ];
