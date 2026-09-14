@@ -3,7 +3,7 @@ const experience = [
     date: 'Jan - Aug 2026',
     company: 'agrobotics',
     url: 'https://agrobotics.com/',
-    role: 'Mechanical Engineer Intern',
+    role: 'Mechatronics Engineer',
     note: 'Worked on robotic arms, drive systems, and controls.',
   },
   {
