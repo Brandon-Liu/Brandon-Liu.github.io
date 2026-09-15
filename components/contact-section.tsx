@@ -1,3 +1,5 @@
+import { PrintButton } from './print-button';
+
 export function ContactSection() {
   return (
     <section
@@ -5,6 +7,7 @@ export function ContactSection() {
       className="content-page contact-page scroll-section"
       aria-label="Contact"
     >
+      <h2 className="print-only">Contact</h2>
       <div className="contact-options">
         <a href="mailto:liu3681@purdue.edu">Email</a>
         <a
@@ -21,9 +24,15 @@ export function ContactSection() {
         >
           GitHub
         </a>
-        <a href="/brandon-liu-resume.pdf" target="_blank" rel="noreferrer">
+        <a
+          className="contact-resume"
+          href="/brandon-liu-resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
           Resume
         </a>
+        <PrintButton />
       </div>
     </section>
   );

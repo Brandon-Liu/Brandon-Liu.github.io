@@ -36,6 +36,24 @@ body {
 a {
   color: inherit;
 }
+.print-only {
+  display: none;
+}
+.print-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--rule);
+}
+.print-button:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 5px;
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1056,5 +1074,224 @@ image[href='/override-robot-white.png'] {
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+}
+
+/* A static portfolio, independent of slideshow position and screen width.
+   Physical dimensions fit both Letter and A4 at the default 100% scale. */
+@page {
+  size: auto;
+  margin: 14mm;
+}
+
+@media print {
+  :root {
+    --ink: #173b2d;
+    --muted: #444;
+    --rule: #c9cfcb;
+  }
+  html,
+  body {
+    min-height: 0;
+    background: #fff;
+    color: #222;
+    font-size: 10pt;
+    font-weight: 400;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+  .print-only {
+    display: block;
+  }
+  .topbar,
+  .featured-scroll,
+  .coursework-preview,
+  .coursework-details,
+  .contact-resume,
+  .print-button {
+    display: none !important;
+  }
+  a {
+    text-decoration: none;
+  }
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+  .print-heading {
+    padding-bottom: 5mm;
+    margin-bottom: 5mm;
+    border-bottom: 1pt solid var(--ink);
+  }
+  .print-heading p {
+    margin: 0 0 2mm;
+  }
+  .print-heading .print-name {
+    color: var(--ink);
+    font-size: 28pt;
+    font-weight: 650;
+    letter-spacing: -0.035em;
+  }
+  .print-heading a {
+    font-size: 9pt;
+    color: var(--muted);
+  }
+  .cad-gallery,
+  .content-page,
+  .scroll-section {
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  #projects-title,
+  .about-me-content > h2,
+  .experience-content > h2,
+  .contact-page > h2 {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0 0 4mm;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+    color: var(--ink);
+    font-size: 16pt;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  .cad-grid {
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3mm;
+  }
+  .cad-card {
+    height: 43mm;
+    aspect-ratio: auto;
+    padding: 2mm;
+    gap: 2mm;
+    break-inside: avoid;
+    transform: none;
+  }
+  .cad-card-with-image span {
+    color: #222;
+    font-size: 9pt;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .about-me-section {
+    break-before: page;
+  }
+  .about-me-content,
+  .experience-content {
+    max-width: none;
+  }
+  .about-me-profile {
+    flex-direction: row;
+    gap: 5mm;
+    padding: 0;
+    margin: 0;
+  }
+  .about-me-portrait {
+    width: 25mm;
+    height: 25mm;
+    flex: 0 0 25mm;
+  }
+  .about-me-copy {
+    flex: 1;
+    min-width: 0;
+  }
+  .about-me-copy p {
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+  .about-me-copy p + p {
+    margin-top: 2mm;
+  }
+  .print-coursework {
+    margin-top: 4mm;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .print-coursework ul {
+    columns: 2;
+    column-gap: 5mm;
+    padding-left: 4mm;
+    margin: 2mm 0 0;
+    font-size: 8pt;
+  }
+  .print-coursework li {
+    break-inside: avoid;
+    margin-bottom: 0.7mm;
+  }
+  .experience-page {
+    margin-top: 6mm;
+  }
+  .experience-list {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .experience-row {
+    margin-bottom: 4mm;
+    break-inside: avoid;
+  }
+  .experience-row h3 {
+    font-size: 11pt;
+    line-height: 1.3;
+  }
+  .experience-meta {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1mm 4mm;
+    margin-top: 1mm;
+  }
+  .experience-row .experience-role,
+  .experience-date,
+  .experience-row .experience-note {
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .experience-row .experience-note {
+    margin-top: 1mm;
+  }
+  .contact-page {
+    display: block;
+    margin-top: 5mm;
+    padding-top: 4mm;
+    border-top: 1px solid var(--rule);
+    break-inside: avoid;
+  }
+  .contact-options {
+    display: grid;
+    gap: 1.5mm;
+    max-width: none;
+  }
+  .contact-options > a {
+    display: block;
+    min-height: 0;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .contact-options a[href^='mailto:']::after {
+    content: ': liu3681@purdue.edu';
+    font-weight: 400;
+  }
+  .contact-options a[href^='https://']::after {
+    content: ': ' attr(href);
+    font-weight: 400;
+    overflow-wrap: anywhere;
   }
 }

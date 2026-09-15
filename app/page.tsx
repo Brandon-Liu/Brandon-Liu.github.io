@@ -71,6 +71,11 @@ export default function Home() {
   return (
     <main>
       <h1 className="sr-only">Brandon Liu CAD showcase</h1>
+      <header className="print-heading print-only">
+        <p className="print-name">Brandon Liu</p>
+        <p>Mechanical Engineering · Robotics &amp; CAD</p>
+        <a href="https://brandon-liu.github.io">brandon-liu.github.io</a>
+      </header>
       <FeaturedShowcase />
       <section
         className="cad-gallery"
@@ -107,7 +112,7 @@ export default function Home() {
                     width={project.width}
                     height={project.height}
                     unoptimized
-                    loading="lazy"
+                    loading="eager"
                     decoding="async"
                   />
                 ))}

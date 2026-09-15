@@ -39,6 +39,7 @@ export function AboutSection() {
               alt="Brandon Liu"
               width={280}
               height={280}
+              loading="eager"
             />
           </div>
           <div className="about-me-copy">
@@ -57,7 +58,7 @@ export function AboutSection() {
               </a>
               .
             </p>
-            <p>
+            <p className="coursework-preview">
               <strong>Relevant coursework:</strong> Autonomous Systems, Heat and
               Mass Transfer, Controls 2, Machine Design, Partial Differential
               Equations, Linear Circuit Analysis …
@@ -70,6 +71,14 @@ export function AboutSection() {
                 ))}
               </ul>
             </details>
+            <div className="print-coursework print-only">
+              <strong>Relevant coursework</strong>
+              <ul>
+                {coursework.map((course) => (
+                  <li key={course}>{course}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
