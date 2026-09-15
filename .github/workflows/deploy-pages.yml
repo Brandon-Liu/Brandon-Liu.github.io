@@ -22,6 +22,9 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run format:check
       - uses: actions/configure-pages@v5
       - run: npm run build:pages
       - uses: actions/upload-pages-artifact@v4
